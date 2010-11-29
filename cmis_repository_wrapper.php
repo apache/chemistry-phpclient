@@ -16,6 +16,34 @@
 # specific language governing permissions and limitations
 # under the License.
 
+define("HTTP_OK", 200);
+define("HTTP_CREATED", 201);
+define("HTTP_ACCEPTED", 202);
+define("HTTP_NONAUTHORITATIVE_INFORMATION", 203);
+define("HTTP_NO_CONTENT", 204);
+define("HTTP_RESET_CONTENT", 205);
+define("HTTP_PARTIAL_CONTENT", 206);
+define("HTTP_MULTIPLE_CHOICES", 300);
+define("HTTP_BAD_REQUEST", 400); // invalidArgument, filterNotValid
+define("HTTP_UNAUTHORIZED", 401);
+define("HTTP_FORBIDDEN", 403); // permissionDenied, streamNotSupported
+define("HTTP_NOT_FOUND", 404); // objectNotFound
+define("HTTP_METHOD_NOT_ALLOWED", 405); // notSupported
+define("HTTP_NOT_ACCEPTABLE", 406);
+define("HTTP_PROXY_AUTHENTICATION_REQUIRED", 407);
+define("HTTP_REQUEST_TIMEOUT", 408);
+define("HTTP_CONFLICT", 409); // constraint, contentAlreadyExists, versioning, updateConflict, nameConstraintViolation
+define("HTTP_UNSUPPORTED_MEDIA_TYPE", 415);
+define("HTTP_UNPROCESSABLE_ENTITY", 422);
+define("HTTP_INTERNAL_SERVER_ERROR", 500); // runtime, storage
+
+class CmisInvalidArgumentException extends Exception {}
+class CmisObjectNotFoundException extends Exception {}
+class CmisPermissionDeniedException extends Exception {}
+class CmisNotSupportedException extends Exception {}
+class CmisConstraintException extends Exception {}
+class CmisRuntimeException extends Exception {}
+
 class CMISRepositoryWrapper
 {
     // Handles --
@@ -29,6 +57,7 @@ class CMISRepositoryWrapper
     // Only Handles Basic Auth
     // Very Little Error Checking
     // Does not work against pre CMIS 1.0 Repos
+    
     var $url;
     var $username;
     var $password;
@@ -63,6 +92,24 @@ class CMISRepositoryWrapper
             return $url;
         }
     }
+    
+    function convertStatusCode($code, $message)
+    {
+        switch ($code) {
+            case HTTP_BAD_REQUEST:
+                return new CmisInvalidArgumentException($message, $code);
+            case HTTP_NOT_FOUND:
+                return new CmisObjectNotFoundException($message, $code);
+            case HTTP_FORBIDDEN:
+                return new CmisPermissionDeniedException($message, $code);
+            case HTTP_METHOD_NOT_ALLOWED:
+                return new CmisNotSupportedException($message, $code);
+            case HTTP_CONFLICT:
+                return new CmisConstraintException($message, $code);
+            default:
+                return new CmisRuntimeException($message, $code);
+            }
+    }
 
     function connect($url, $username, $password, $options)
     {
@@ -73,7 +120,7 @@ class CMISRepositoryWrapper
         $this->auth_options = $options;
         $this->authenticated = false;
         $retval = $this->doGet($this->url);
-        if ($retval->code == 200 || $retval->code == 201)
+        if ($retval->code == HTTP_OK || $retval->code == HTTP_CREATED)
         {
             $this->authenticated = true;
             $this->workspace = CMISRepositoryWrapper :: extractWorkspace($retval->body);
@@ -82,22 +129,42 @@ class CMISRepositoryWrapper
 
     function doGet($url)
     {
-        return $this->doRequest($url);
+        $retval = $this->doRequest($url);
+        if ($retval->code != HTTP_OK)
+        {
+            throw $this->convertStatusCode($retval->code, $retval->body);
+        }
+        return $retval;
     }
 
     function doDelete($url)
     {
-        return $this->doRequest($url, "DELETE");
+        $retval = $this->doRequest($url, "DELETE");
+        if ($retval->code != HTTP_NO_CONTENT)
+        {
+            throw $this->convertStatusCode($retval->code, $retval->body);
+        }
+        return $retval;
     }
 
     function doPost($url, $content, $contentType, $charset = null)
     {
-        return $this->doRequest($url, "POST", $content, $contentType);
+        $retval = $this->doRequest($url, "POST", $content, $contentType);
+        if ($retval->code != HTTP_CREATED)
+        {
+            throw $this->convertStatusCode($retval->code, $retval->body);
+        }
+        return $retval;
     }
 
     function doPut($url, $content, $contentType, $charset = null)
     {
-        return $this->doRequest($url, "PUT", $content, $contentType);
+        $retval = $this->doRequest($url, "PUT", $content, $contentType);
+        if (($retval->code < HTTP_OK) || ($retval->code >= HTTP_MULTIPLE_CHOICES))
+        {
+            throw $this->convertStatusCode($retval->code, $retval->body);
+        }
+        return $retval;
     }
 
     function doRequest($url, $method = "GET", $content = null, $contentType = null, $charset = null)
@@ -1029,7 +1096,7 @@ xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/">
 
     function createDocumentFromSource()
     { //Yes?
-        throw Exception("Not Implemented in This Binding");
+        throw new CmisNotSupportedException("createDocumentFromSource is not supported by the AtomPub binding!");
     }
 
     function createFolder($folderId, $folderName, $properties = array (), $options = array ())
