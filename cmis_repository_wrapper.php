@@ -1058,7 +1058,7 @@ xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/">
         {
             $hash_values["cmis:objectTypeId"] = $objectType;
         }
-        $properties_xml = $this->processPropertyTemplates($objectType, $hash_values);
+        $properties_xml = $this->processPropertyTemplates($hash_values["cmis:objectTypeId"], $hash_values);
         if (is_array($options))
         {
             $hash_values = $options;
