@@ -329,6 +329,26 @@ class CMISRepositoryWrapper
         }
         return $links;
     }
+	static function extractAllowableActions($xmldata)
+    {
+        $doc = new DOMDocument();
+        $doc->loadXML($xmldata);
+        return CMISRepositoryWrapper :: extractAllowableActionsFromNode($doc);
+    }
+    static function extractAllowableActionsFromNode($xmlnode)
+    {
+        $result = array();
+        $allowableActions = $xmlnode->getElementsByTagName("allowableActions");
+        if ($allowableActions->length > 0) {
+            foreach($allowableActions->item(0)->childNodes as $action)
+            {
+                if (isset($action->localName)) {
+                    $result[$action->localName] = (preg_match("/^true$/i", $action->nodeValue) > 0);
+                }
+            }
+        }
+        return $result;
+    }
     static function extractObject($xmldata)
     {
         $doc = new DOMDocument();
@@ -371,6 +391,7 @@ class CMISRepositoryWrapper
 			$children_doc->appendChild($xnode);
 	        $retval->children = CMISRepositoryWrapper :: extractObjectFeedFromNode($children_doc);
         }
+		$retval->allowableActions = CMISRepositoryWrapper :: extractAllowableActionsFromNode($xmlnode);
         return $retval;
     }
     
@@ -1036,9 +1057,10 @@ xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/">
 
     function getAllowableActions($objectId, $options = array ())
     {
-        // get stripped down version of object (for the links) and then get the allowable actions?
-        // Low priority -- can get all information when getting object
-        throw Exception("Not Implemented");
+        $myURL = $this->getLink($objectId, LINK_ALLOWABLE_ACTIONS);
+        $ret = $this->doGet($myURL);
+        $result = $this->extractAllowableActions($ret->body);
+        return $result;
     }
 
     function getRenditions($objectId, $options = array (
