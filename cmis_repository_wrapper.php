@@ -186,9 +186,9 @@ class CMISRepositoryWrapper
         curl_setopt($session, CURLOPT_CUSTOMREQUEST, $method);
         if ($contentType)
         {
-            $headers = array ();
-            $headers["Content-Type"] = $contentType;
-            curl_setopt($session, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($session, CURLOPT_HTTPHEADER, array (
+                "Content-Type: " . $contentType
+            ));
         }
         if ($content)
         {
@@ -196,9 +196,6 @@ class CMISRepositoryWrapper
         }
         if ($method == "POST")
         {
-            curl_setopt($session, CURLOPT_HTTPHEADER, array (
-                "Content-Type: " . $contentType
-            ));
             curl_setopt($session, CURLOPT_POST, true);
         }
         //TODO: Make this storage optional
