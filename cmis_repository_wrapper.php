@@ -526,6 +526,8 @@ class CMISRepositoryWrapper
         $retval->collections = array ();
         $retval->capabilities = array ();
         $retval->repositoryInfo = array ();
+        $retval->permissions = array();
+        $retval->permissionsMapping = array();
         $result = CMISRepositoryWrapper :: doXQueryFromNode($xmlnode, "//cmisra:uritemplate");
         foreach ($result as $node)
         {
@@ -541,13 +543,31 @@ class CMISRepositoryWrapper
         {
             $retval->capabilities[$node->nodeName] = $node->nodeValue;
         }
-        $result = CMISRepositoryWrapper :: doXQueryFromNode($xmlnode, "//cmisra:repositoryInfo/*");
+        $result = CMISRepositoryWrapper :: doXQueryFromNode($xmlnode, "//cmisra:repositoryInfo/*[name()!='cmis:capabilities' and name()!='cmis:aclCapability']");
         foreach ($result as $node)
         {
-            if ($node->nodeName != "cmis:capabilities")
+            $retval->repositoryInfo[$node->nodeName] = $node->nodeValue;
+        }
+        $result = CMISRepositoryWrapper :: doXQueryFromNode($xmlnode, "//cmis:aclCapability/cmis:permissions");
+        foreach ($result as $node)
+        {
+            $retval->permissions[$node->getElementsByTagName("permission")->item(0)->nodeValue] = $node->getElementsByTagName("description")->item(0)->nodeValue;
+        }
+        $result = CMISRepositoryWrapper :: doXQueryFromNode($xmlnode, "//cmis:aclCapability/cmis:mapping");
+        foreach ($result as $node)
+        {
+            $key = $node->getElementsByTagName("key")->item(0)->nodeValue;
+            $values = array();
+            foreach ($node->getElementsByTagName("permission") as $value)
             {
-                $retval->repositoryInfo[$node->nodeName] = $node->nodeValue;
+                array_push($values, $value->nodeValue);
             }
+            $retval->permissionsMapping[$key] = $values;
+        }
+        $result = CMISRepositoryWrapper :: doXQueryFromNode($xmlnode, "//cmis:aclCapability/*[name()!='cmis:permissions' and name()!='cmis:mapping']");
+        foreach ($result as $node)
+        {
+            $retval->repositoryInfo[$node->nodeName] = $node->nodeValue;
         }
 
         return $retval;
