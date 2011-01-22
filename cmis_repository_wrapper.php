@@ -65,6 +65,8 @@ class CMISRepositoryWrapper
     var $workspace;
     var $last_request;
     var $do_not_urlencode;
+    protected $_addlCurlOptions = array();
+    
     static $namespaces = array (
         "cmis" => "http://docs.oasis-open.org/ns/cmis/core/200908/",
         "cmisra" => "http://docs.oasis-open.org/ns/cmis/restatom/200908/",
@@ -73,11 +75,13 @@ class CMISRepositoryWrapper
         
     );
 
-    function __construct($url, $username = null, $password = null, $options = null)
+    function __construct($url, $username = null, $password = null, $options = null, array $addlCurlOptions = array())
     {
         if (is_array($options) && $options["config:do_not_urlencode"]) {
             $this->do_not_urlencode=true;
         }
+        $this->_addlCurlOptions = $addlCurlOptions; // additional cURL options
+        
         $this->connect($url, $username, $password, $options);
     }
 
@@ -198,6 +202,16 @@ class CMISRepositoryWrapper
         {
             curl_setopt($session, CURLOPT_POST, true);
         }
+        
+        // apply addl. cURL options
+        // WARNING: this may override previously set options
+        if (count($this->_addlCurlOptions)) {
+            foreach ($this->_addlCurlOptions as $key => $value) {
+                curl_setopt($session, $key, $value);
+            }
+        }
+        
+        
         //TODO: Make this storage optional
         $retval = new stdClass();
         $retval->url = $url;
@@ -628,9 +642,9 @@ class CMISService extends CMISRepositoryWrapper
     var $_title_cache;
     var $_objTypeId_cache;
     var $_type_cache;
-    function __construct($url, $username, $password, $options = null)
+    function __construct($url, $username, $password, $options = null, array $addlCurlOptions = array())
     {
-        parent :: __construct($url, $username, $password, $options);
+        parent :: __construct($url, $username, $password, $options, $addlCurlOptions);
         $this->_link_cache = array ();
         $this->_title_cache = array ();
         $this->_objTypeId_cache = array ();
