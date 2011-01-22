@@ -31,7 +31,7 @@ define("HTTP_NOT_FOUND", 404); // objectNotFound
 define("HTTP_METHOD_NOT_ALLOWED", 405); // notSupported
 define("HTTP_NOT_ACCEPTABLE", 406);
 define("HTTP_PROXY_AUTHENTICATION_REQUIRED", 407);
-define("HTTP_REQUEST_TIMEOUT", 408);
+define("xHTTP_REQUEST_TIMEOUT", 408); //Had to change this b/c HTTP_REQUEST_TIMEOUT conflicts with definition in Drupal 7
 define("HTTP_CONFLICT", 409); // constraint, contentAlreadyExists, versioning, updateConflict, nameConstraintViolation
 define("HTTP_UNSUPPORTED_MEDIA_TYPE", 415);
 define("HTTP_UNPROCESSABLE_ENTITY", 422);
