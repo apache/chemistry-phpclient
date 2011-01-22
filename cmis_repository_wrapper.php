@@ -383,7 +383,7 @@ class CMISRepositoryWrapper
             if ($pn->attributes)
             {
                 $propDefId = $pn->attributes->getNamedItem("propertyDefinitionId");
-                if (!is_null($propDefId))
+                if (!is_null($propDefId) && $pn->getElementsByTagName("value") && $pn->getElementsByTagName("value")->item(0))
                 {
                     $retval->properties[$propDefId->nodeValue] = $pn->getElementsByTagName("value")->item(0)->nodeValue;
                 }
@@ -399,7 +399,7 @@ class CMISRepositoryWrapper
         if (is_object($children_feed_c)) {
 			$children_feed_l = $children_feed_c->getElementsByTagName("feed");
         }
-        if (is_object($children_feed_l) && is_object($children_feed_l->item(0))) {
+        if (isset($children_feed_l) && is_object($children_feed_l) && is_object($children_feed_l->item(0))) {
         	$children_feed = $children_feed_l->item(0);
 			$children_doc = new DOMDocument();
 			$xnode = $children_doc->importNode($children_feed,true); // Avoid Wrong Document Error
