@@ -382,7 +382,11 @@ class CMISRepositoryWrapper
         {
             if ($pn->attributes)
             {
-                $retval->properties[$pn->attributes->getNamedItem("propertyDefinitionId")->nodeValue] = $pn->getElementsByTagName("value")->item(0)->nodeValue;
+                $propDefId = $pn->attributes->getNamedItem("propertyDefinitionId");
+                if (!is_null($propDefId))
+                {
+                    $retval->properties[$propDefId->nodeValue] = $pn->getElementsByTagName("value")->item(0)->nodeValue;
+                }
             }
         }
         $retval->uuid = $xmlnode->getElementsByTagName("id")->item(0)->nodeValue;
