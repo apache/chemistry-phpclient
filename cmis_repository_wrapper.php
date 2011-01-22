@@ -482,7 +482,12 @@ class CMISRepositoryWrapper
         //   Provides two arrays 
         //   -- one sequential array (a list)
         //   -- one hash table indexed by objectID
+        //   and a property "numItems" that holds the total number of items available.
         $retval = new stdClass();
+        // extract total number of items
+        $numItemsNode = CMISRepositoryWrapper::doXQueryFromNode($xmlnode, "/atom:feed/cmisra:numItems");
+        $retval->numItems = $numItemsNode->length ? (int) $numItemsNode->item(0)->nodeValue : -1; // set to negative value if info is not available
+                
         $retval->objectList = array ();
         $retval->objectsById = array ();
         $result = CMISRepositoryWrapper :: doXQueryFromNode($xmlnode, "/atom:feed/atom:entry");
