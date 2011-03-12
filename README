@@ -45,3 +45,9 @@ FUNCTIONALITY
 
 ==============
 Adding Calls that mimick the domain model
+
+==============
+Potential enhancements
++ performance enhancements -- storing session/repository information
++ web services binding
++ PHP Provider framework
