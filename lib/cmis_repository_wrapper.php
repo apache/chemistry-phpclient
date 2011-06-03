@@ -383,9 +383,17 @@ class CMISRepositoryWrapper
             if ($pn->attributes)
             {
                 $propDefId = $pn->attributes->getNamedItem("propertyDefinitionId");
+                // TODO: Maybe use ->length=0 to even detect null values
                 if (!is_null($propDefId) && $pn->getElementsByTagName("value") && $pn->getElementsByTagName("value")->item(0))
                 {
-                    $retval->properties[$propDefId->nodeValue] = $pn->getElementsByTagName("value")->item(0)->nodeValue;
+                	if ($pn->getElementsByTagName("value")->length > 1) {
+                		$retval->properties[$propDefId->nodeValue] = array();
+                		for ($idx=0;$idx < $pn->getElementsByTagName("value")->length;$idx++) {
+                			$retval->properties[$propDefId->nodeValue][$idx] = $pn->getElementsByTagName("value")->item($idx)->nodeValue;
+                		}
+                	} else {
+                		$retval->properties[$propDefId->nodeValue] = $pn->getElementsByTagName("value")->item(0)->nodeValue;
+                	}
                 }
             }
         }
