@@ -992,7 +992,7 @@ xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/">
                         $first_one = false;
                     } else
                     {
-                        $hash_values['properties'] .= "</cmis:values>\n<cmis:values>";
+                        $hash_values['properties'] .= "</cmis:value>\n<cmis:value>";
                     }
                     $hash_values['properties'] .= $val;
                 }
@@ -1223,6 +1223,7 @@ xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/">
             $hash_values['summary'] = $objectName;
         }
         $put_value = CMISRepositoryWrapper :: processTemplate($entry_template, $hash_values);
+	 	// print $put_value; // RRM DEBUG
         $ret = $this->doPut($obj_url, $put_value, MIME_ATOM_XML_ENTRY);
         $obj = $this->extractObject($ret->body);
         $this->cacheObjectInfo($obj);
