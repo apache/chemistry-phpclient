@@ -420,7 +420,7 @@ class CMISRepositoryWrapper
     
     function handleSpaces($path)
     {
-        return $this->do_not_urlencode ? $path : str_replace(" ","%20",str_replace("%","%25",$path));
+        return $this->do_not_urlencode ? $path : rawurlencode($path);
     }
 
     static function extractTypeDef($xmldata)
