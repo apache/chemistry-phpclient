@@ -897,7 +897,7 @@ xmlns:cmisra="http://docs.oasisopen.org/ns/cmis/restatom/200908/">
 
         return ob_get_clean();
     }
-    function query($q, $options = array ())
+    function query($statement, $options = array ())
     {
         static $query_template;
         if (!isset ($query_template))
@@ -905,7 +905,7 @@ xmlns:cmisra="http://docs.oasisopen.org/ns/cmis/restatom/200908/">
             $query_template = CMISService :: getQueryTemplate();
         }
         $hash_values = $options;
-        $hash_values['q'] = $q;
+        $hash_values['q'] = $statement;
         $post_value = CMISRepositoryWrapper :: processTemplate($query_template, $hash_values);
         $ret = $this->doPost($this->workspace->collections['query'], $post_value, MIME_CMIS_QUERY);
         $objs = $this->extractObjectFeed($ret->body);
