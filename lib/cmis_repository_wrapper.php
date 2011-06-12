@@ -810,11 +810,11 @@ class CMISService extends CMISRepositoryWrapper
         return $obj;
     }
     //Navigation Services
-    function getFolderTree($objectId, $depth, $options = array ())
+    function getFolderTree($folderId, $depth, $options = array ())
     {
         $hash_values = $options;
         $hash_values['depth'] = $depth;
-        $myURL = $this->getLink($objectId, "http://docs.oasis-open.org/ns/cmis/link/200908/foldertree");
+        $myURL = $this->getLink($folderId, "http://docs.oasis-open.org/ns/cmis/link/200908/foldertree");
         $myURL = CMISRepositoryWrapper :: getOpUrl ($myURL, $hash_values);
         $ret = $this->doGet($myURL);
         $objs = $this->extractObjectFeed($ret->body);
@@ -822,11 +822,11 @@ class CMISService extends CMISRepositoryWrapper
         return $objs;
     }
 
-    function getDescendants($objectId, $depth, $options = array ())
+    function getDescendants($folderId, $depth, $options = array ())
     { // Nice to have
         $hash_values = $options;
         $hash_values['depth'] = $depth;
-        $myURL = $this->getLink($objectId, "down-tree");
+        $myURL = $this->getLink($folderId, "down-tree");
         $myURL = CMISRepositoryWrapper :: getOpUrl ($myURL, $hash_values);
         $ret = $this->doGet($myURL);
         $objs = $this->extractObjectFeed($ret->body);
@@ -834,9 +834,9 @@ class CMISService extends CMISRepositoryWrapper
         return $objs;
     }
 
-    function getChildren($objectId, $options = array ())
+    function getChildren($folderId, $options = array ())
     {
-        $myURL = $this->getLink($objectId, "down");
+        $myURL = $this->getLink($folderId, "down");
         //TODO: Need GenURLQueryString Utility
         $ret = $this->doGet($myURL);
         $objs = $this->extractObjectFeed($ret->body);
@@ -844,9 +844,9 @@ class CMISService extends CMISRepositoryWrapper
         return $objs;
     }
 
-    function getFolderParent($objectId, $options = array ())
+    function getFolderParent($folderId, $options = array ())
     { //yes
-        $myURL = $this->getLink($objectId, "up");
+        $myURL = $this->getLink($folderId, "up");
         //TODO: Need GenURLQueryString Utility
         $ret = $this->doGet($myURL);
         $obj = $this->extractObjectEntry($ret->body);
