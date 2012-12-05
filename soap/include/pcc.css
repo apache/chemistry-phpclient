@@ -1,0 +1,168 @@
+/* 
+    Document   : gendoc
+    Created on : 03.08.2012, 19:32:13
+    Author     : Karsten Eberding
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body { 
+  margin: auto;
+  display: block;
+  font-family: Arial, Verdana, sans-serif;
+}
+
+h1, h2 {
+  margin: 0px;
+  font-weight: bold;
+}
+
+.clear {
+    clear: both;
+    visibility: hidden;
+}
+
+.header {
+    background-color: #ddddff;
+    padding: 10px;
+}
+
+.titleContainer {
+    width: 100%;
+    height: 36px;
+}
+.errorMessage {
+    background-color: #cc0000;
+    padding: 12px;
+    color: #ffffff;
+}
+.folderList {
+    width: 25%;
+    float: left;
+    background-color: #eeeeee;
+    padding: 6px;
+    display: table;
+}
+
+.documentList {
+    width: 70%;
+    float: left;
+    display: inline-block;
+    padding: 6px;
+}
+
+.headerText {
+    font-size: 100%;
+}
+.moduleTitle {
+    font-size: 150%;
+    height: 28px;
+    width: 70%;
+    margin: 0px;
+    float: left;
+}
+
+.moduleSubTitle {
+    font-size: 100%;
+    text-align: right;
+    width: 30%;
+    margin: 0px;
+    float: left;
+}
+
+.logoutTitle {
+    float: left;
+    width: 30%;
+    height: 36px;
+    font-size: 100%;
+    text-align: right;
+}
+.dialoghead {
+    font-size: 120%;
+    height: 36px;
+    margin: 0px;
+    padding: 10px;
+    background-color: #ddddff;    
+}
+.dialogbody {
+    padding: 10px;
+}
+.dialognotice {
+    color: brown;
+}
+.dialogLabel {
+    width: 30%;
+}
+.dialogField {
+    width: 70%;
+}
+
+.mainentry {
+    font-size: 120%;
+    font-weight: bold;
+    color: blue;
+}
+
+.actionlist {
+    font-size: 80%;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+.actionlist {
+    visibility: hidden;
+    display: block;
+    margin: 0 10px 0 0;
+    padding: 0 0 3px 0;
+}
+
+.actionlist span {
+    margin: 0 15px 0 0;
+}
+
+tr:hover .actionlist {
+    visibility: visible;
+}
+    
+.modalContainer {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;    
+}
+
+.modalBackground {
+    filter: Alpha(Opacity=40);
+    -moz-opacity: 0.4;
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+    background-color: #999999;
+    position: absolute;
+    z-index: 500;
+    top: 0px;
+    left: 0px;
+}
+
+.modalWindow {
+    position: absolute;
+    width: 400px;
+    left: 50%;
+    top: 50%;
+    z-index: 750;
+}
+
+.modalDialog {
+    background-color: white;
+    border: solid 6px black;
+    position: relative;
+    top: -200px;
+    left: -200px;
+    z-index: 1000;
+    width: 400px;
+    height: 300px;
+    padding: 0px;
+}
