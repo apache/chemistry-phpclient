@@ -263,7 +263,7 @@ class CMISService extends CMISRepositoryWrapper {
 	 * @since CMIS-1.0
 	 */
 	function getRepositories() {
-		throw CmisNotImplementedException("getRepositories");
+		throw new CmisNotImplementedException("getRepositories");
 	}
 
 	/**
@@ -375,7 +375,7 @@ class CMISService extends CMISRepositoryWrapper {
 	 * @since CMIS-1.1
 	 */
 	function createType($objectType) {
-		throw CmisNotImplementedException("createType");		
+		throw new CmisNotImplementedException("createType");		
 	}
 
 	/**
@@ -390,7 +390,7 @@ class CMISService extends CMISRepositoryWrapper {
 	 * @since CMIS-1.1
 	 */
 	function updateType($objectType) {
-		throw CmisNotImplementedException("updateType");		
+		throw new CmisNotImplementedException("updateType");		
 	}
 
 	/**
@@ -403,7 +403,7 @@ class CMISService extends CMISRepositoryWrapper {
 	 * @since CMIS-1.1
 	 */
 	function deleteType($typeId) {
-		throw CmisNotImplementedException("deleteType");		
+		throw new CmisNotImplementedException("deleteType");		
 	}
 	//Navigation Services
 	/**
@@ -962,15 +962,15 @@ xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/">
 	}
 
 	function createRelationship() { // Not in first Release
-		throw CmisNotImplementedException("createRelationship");
+		throw new CmisNotImplementedException("createRelationship");
 	}
 
 	function createPolicy() { // Not in first Release
-		throw CmisNotImplementedException("createPolicy");
+		throw new CmisNotImplementedException("createPolicy");
 	}
 	
 	function createItem() {
-		throw CmisNotImplementedException("createItem");
+		throw new CmisNotImplementedException("createItem");
 	}
 
 	function updateProperties($objectId, $properties = array (), $options = array ()) { // Yes
@@ -1017,7 +1017,7 @@ xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/">
 	
 	// New for 1.1
 	function bulkUpdateProperties() {
-		throw CmisNotImplementedException("bulkUpdateProperties");		
+		throw new CmisNotImplementedException("bulkUpdateProperties");		
 	}
 
 	function moveObject($objectId, $targetFolderId, $sourceFolderId, $options = array ()) { //yes
@@ -1088,7 +1088,7 @@ xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/">
 	 * @since CMIS-1.0
 	 */
 	function appendContentStream($objectId, $content, $content_type, $options = array ()) { //Yes
-		throw CmisNotImplementedException("appendContentStream");
+		throw new CmisNotImplementedException("appendContentStream");
 	}
 
 	/**
@@ -1120,7 +1120,7 @@ xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/">
 	}
 
 	function getAllVersions() {
-		throw CmisNotImplementedException("getAllVersions");
+		throw new CmisNotImplementedException("getAllVersions");
 	}
 
 	/**
@@ -1179,14 +1179,14 @@ xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/">
 	}
 
 	function deleteAllVersions() {
-		throw CmisNotImplementedException("deleteAllVersions");
+		throw new CmisNotImplementedException("deleteAllVersions");
 	}
 
 	//Relationship Services
 	function getObjectRelationships() {
 		// get stripped down version of object (for the links) and then get the relationships?
 		// Low priority -- can get all information when getting object
-		throw CmisNotImplementedException("getObjectRelationships");
+		throw new CmisNotImplementedException("getObjectRelationships");
 	}
 
 	//Multi-Filing ServicesRelation
@@ -1208,23 +1208,23 @@ xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/">
 
 	//Policy Services
 	function getAppliedPolicies() {
-		throw CmisNotImplementedException("getAppliedPolicies");
+		throw new CmisNotImplementedException("getAppliedPolicies");
 	}
 
 	function applyPolicy() {
-		throw CmisNotImplementedException("applyPolicy");
+		throw new CmisNotImplementedException("applyPolicy");
 	}
 
 	function removePolicy() {
-		throw CmisNotImplementedException("removePolicy");
+		throw new CmisNotImplementedException("removePolicy");
 	}
 
 	//ACL Services
 	function getACL() {
-		throw CmisNotImplementedException("getACL");
+		throw new CmisNotImplementedException("getACL");
 	}
 
 	function applyACL() {
-		throw CmisNotImplementedException("applyACL");
+		throw new CmisNotImplementedException("applyACL");
 	}
 }

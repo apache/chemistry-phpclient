@@ -32,4 +32,3 @@ class AlfrescoCMISH2Test extends PHPUnit_Framework_TestCase
 		$folder = $this->client->createFolder($folder->id,"TEST");
 	}
 }
-?>
