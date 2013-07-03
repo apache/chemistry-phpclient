@@ -1,0 +1,2803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a12" title="">
+  <file path="cmis/cmis_repository_wrapper.php" hash="a4a460776869d432de2326df3a9a08bc" package="Default">
+    <constant namespace="global" line="19" package="Default">
+      <name>HTTP_OK</name>
+      <full_name>\HTTP_OK</full_name>
+      <value>200</value>
+    </constant>
+    <constant namespace="global" line="20" package="Default">
+      <name>HTTP_CREATED</name>
+      <full_name>\HTTP_CREATED</full_name>
+      <value>201</value>
+    </constant>
+    <constant namespace="global" line="21" package="Default">
+      <name>HTTP_ACCEPTED</name>
+      <full_name>\HTTP_ACCEPTED</full_name>
+      <value>202</value>
+    </constant>
+    <constant namespace="global" line="22" package="Default">
+      <name>HTTP_NONAUTHORITATIVE_INFORMATION</name>
+      <full_name>\HTTP_NONAUTHORITATIVE_INFORMATION</full_name>
+      <value>203</value>
+    </constant>
+    <constant namespace="global" line="23" package="Default">
+      <name>HTTP_NO_CONTENT</name>
+      <full_name>\HTTP_NO_CONTENT</full_name>
+      <value>204</value>
+    </constant>
+    <constant namespace="global" line="24" package="Default">
+      <name>HTTP_RESET_CONTENT</name>
+      <full_name>\HTTP_RESET_CONTENT</full_name>
+      <value>205</value>
+    </constant>
+    <constant namespace="global" line="25" package="Default">
+      <name>HTTP_PARTIAL_CONTENT</name>
+      <full_name>\HTTP_PARTIAL_CONTENT</full_name>
+      <value>206</value>
+    </constant>
+    <constant namespace="global" line="26" package="Default">
+      <name>HTTP_MULTIPLE_CHOICES</name>
+      <full_name>\HTTP_MULTIPLE_CHOICES</full_name>
+      <value>300</value>
+    </constant>
+    <constant namespace="global" line="27" package="Default">
+      <name>HTTP_BAD_REQUEST</name>
+      <full_name>\HTTP_BAD_REQUEST</full_name>
+      <value>400</value>
+    </constant>
+    <constant namespace="global" line="28" package="Default">
+      <name>HTTP_UNAUTHORIZED</name>
+      <full_name>\HTTP_UNAUTHORIZED</full_name>
+      <value>401</value>
+    </constant>
+    <constant namespace="global" line="29" package="Default">
+      <name>HTTP_FORBIDDEN</name>
+      <full_name>\HTTP_FORBIDDEN</full_name>
+      <value>403</value>
+    </constant>
+    <constant namespace="global" line="30" package="Default">
+      <name>HTTP_NOT_FOUND</name>
+      <full_name>\HTTP_NOT_FOUND</full_name>
+      <value>404</value>
+    </constant>
+    <constant namespace="global" line="31" package="Default">
+      <name>HTTP_METHOD_NOT_ALLOWED</name>
+      <full_name>\HTTP_METHOD_NOT_ALLOWED</full_name>
+      <value>405</value>
+    </constant>
+    <constant namespace="global" line="32" package="Default">
+      <name>HTTP_NOT_ACCEPTABLE</name>
+      <full_name>\HTTP_NOT_ACCEPTABLE</full_name>
+      <value>406</value>
+    </constant>
+    <constant namespace="global" line="33" package="Default">
+      <name>HTTP_PROXY_AUTHENTICATION_REQUIRED</name>
+      <full_name>\HTTP_PROXY_AUTHENTICATION_REQUIRED</full_name>
+      <value>407</value>
+    </constant>
+    <constant namespace="global" line="34" package="Default">
+      <name>xHTTP_REQUEST_TIMEOUT</name>
+      <full_name>\xHTTP_REQUEST_TIMEOUT</full_name>
+      <value>408</value>
+    </constant>
+    <constant namespace="global" line="35" package="Default">
+      <name>HTTP_CONFLICT</name>
+      <full_name>\HTTP_CONFLICT</full_name>
+      <value>409</value>
+    </constant>
+    <constant namespace="global" line="36" package="Default">
+      <name>HTTP_UNSUPPORTED_MEDIA_TYPE</name>
+      <full_name>\HTTP_UNSUPPORTED_MEDIA_TYPE</full_name>
+      <value>415</value>
+    </constant>
+    <constant namespace="global" line="37" package="Default">
+      <name>HTTP_UNPROCESSABLE_ENTITY</name>
+      <full_name>\HTTP_UNPROCESSABLE_ENTITY</full_name>
+      <value>422</value>
+    </constant>
+    <constant namespace="global" line="38" package="Default">
+      <name>HTTP_INTERNAL_SERVER_ERROR</name>
+      <full_name>\HTTP_INTERNAL_SERVER_ERROR</full_name>
+      <value>500</value>
+    </constant>
+    <class final="false" abstract="false" namespace="global" line="40" package="Default">
+      <extends>\Exception</extends>
+      <name>CmisInvalidArgumentException</name>
+      <full_name>\CmisInvalidArgumentException</full_name>
+    </class>
+    <class final="false" abstract="false" namespace="global" line="41" package="Default">
+      <extends>\Exception</extends>
+      <name>CmisObjectNotFoundException</name>
+      <full_name>\CmisObjectNotFoundException</full_name>
+    </class>
+    <class final="false" abstract="false" namespace="global" line="42" package="Default">
+      <extends>\Exception</extends>
+      <name>CmisPermissionDeniedException</name>
+      <full_name>\CmisPermissionDeniedException</full_name>
+    </class>
+    <class final="false" abstract="false" namespace="global" line="43" package="Default">
+      <extends>\Exception</extends>
+      <name>CmisNotSupportedException</name>
+      <full_name>\CmisNotSupportedException</full_name>
+    </class>
+    <class final="false" abstract="false" namespace="global" line="44" package="Default">
+      <extends>\Exception</extends>
+      <name>CmisNotImplementedException</name>
+      <full_name>\CmisNotImplementedException</full_name>
+    </class>
+    <class final="false" abstract="false" namespace="global" line="45" package="Default">
+      <extends>\Exception</extends>
+      <name>CmisConstraintException</name>
+      <full_name>\CmisConstraintException</full_name>
+    </class>
+    <class final="false" abstract="false" namespace="global" line="46" package="Default">
+      <extends>\Exception</extends>
+      <name>CmisRuntimeException</name>
+      <full_name>\CmisRuntimeException</full_name>
+    </class>
+    <class final="false" abstract="false" namespace="global" line="51" package="Default">
+      <extends/>
+      <name>CMISRepositoryWrapper</name>
+      <full_name>\CMISRepositoryWrapper</full_name>
+      <docblock line="48">
+        <description></description>
+        <long-description></long-description>
+        <tag line="48" name="internal" description=""/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="69" namespace="global" package="Default">
+        <name>$url</name>
+        <default></default>
+        <docblock line="66">
+          <description></description>
+          <long-description></long-description>
+          <tag line="66" name="internal" description=""/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="74" namespace="global" package="Default">
+        <name>$username</name>
+        <default></default>
+        <docblock line="71">
+          <description></description>
+          <long-description></long-description>
+          <tag line="71" name="internal" description=""/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="79" namespace="global" package="Default">
+        <name>$password</name>
+        <default></default>
+        <docblock line="76">
+          <description></description>
+          <long-description></long-description>
+          <tag line="76" name="internal" description=""/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="84" namespace="global" package="Default">
+        <name>$authenticated</name>
+        <default></default>
+        <docblock line="81">
+          <description></description>
+          <long-description></long-description>
+          <tag line="81" name="internal" description=""/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="89" namespace="global" package="Default">
+        <name>$workspace</name>
+        <default></default>
+        <docblock line="86">
+          <description></description>
+          <long-description></long-description>
+          <tag line="86" name="internal" description=""/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="94" namespace="global" package="Default">
+        <name>$last_request</name>
+        <default></default>
+        <docblock line="91">
+          <description></description>
+          <long-description></long-description>
+          <tag line="91" name="internal" description=""/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="99" namespace="global" package="Default">
+        <name>$do_not_urlencode</name>
+        <default></default>
+        <docblock line="96">
+          <description></description>
+          <long-description></long-description>
+          <tag line="96" name="internal" description=""/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="104" namespace="global" package="Default">
+        <name>$_addlCurlOptions</name>
+        <default>array()</default>
+        <docblock line="101">
+          <description></description>
+          <long-description></long-description>
+          <tag line="101" name="internal" description=""/>
+        </docblock>
+      </property>
+      <property final="false" static="true" visibility="public" line="110" namespace="global" package="Default">
+        <name>$namespaces</name>
+        <default>array("cmis" =&gt; "http://docs.oasis-open.org/ns/cmis/core/200908/", "cmisra" =&gt; "http://docs.oasis-open.org/ns/cmis/restatom/200908/", "atom" =&gt; "http://www.w3.org/2005/Atom", "app" =&gt; "http://www.w3.org/2007/app")</default>
+        <docblock line="107">
+          <description></description>
+          <long-description></long-description>
+          <tag line="107" name="internal" description=""/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="121" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="118">
+          <description></description>
+          <long-description></long-description>
+          <tag line="118" name="internal" description=""/>
+        </docblock>
+        <argument line="121">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="121">
+          <name>$username</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="121">
+          <name>$password</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="121">
+          <name>$options</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="121">
+          <name>$addlCurlOptions</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="133" package="Default">
+        <name>getAsArray</name>
+        <full_name>getAsArray</full_name>
+        <docblock line="130">
+          <description></description>
+          <long-description></long-description>
+          <tag line="130" name="internal" description=""/>
+        </docblock>
+        <argument line="133">
+          <name>$prop</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="147" package="Default">
+        <name>getOpUrl</name>
+        <full_name>getOpUrl</full_name>
+        <docblock line="144">
+          <description></description>
+          <long-description></long-description>
+          <tag line="144" name="internal" description=""/>
+        </docblock>
+        <argument line="147">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="147">
+          <name>$options</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="162" package="Default">
+        <name>convertStatusCode</name>
+        <full_name>convertStatusCode</full_name>
+        <docblock line="159">
+          <description></description>
+          <long-description></long-description>
+          <tag line="159" name="internal" description=""/>
+        </docblock>
+        <argument line="162">
+          <name>$code</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="162">
+          <name>$message</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="183" package="Default">
+        <name>connect</name>
+        <full_name>connect</full_name>
+        <docblock line="180">
+          <description></description>
+          <long-description></long-description>
+          <tag line="180" name="internal" description=""/>
+        </docblock>
+        <argument line="183">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="183">
+          <name>$username</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="183">
+          <name>$password</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="183">
+          <name>$options</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="202" package="Default">
+        <name>doGet</name>
+        <full_name>doGet</full_name>
+        <docblock line="199">
+          <description></description>
+          <long-description></long-description>
+          <tag line="199" name="internal" description=""/>
+        </docblock>
+        <argument line="202">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="215" package="Default">
+        <name>doDelete</name>
+        <full_name>doDelete</full_name>
+        <docblock line="212">
+          <description></description>
+          <long-description></long-description>
+          <tag line="212" name="internal" description=""/>
+        </docblock>
+        <argument line="215">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="228" package="Default">
+        <name>doPost</name>
+        <full_name>doPost</full_name>
+        <docblock line="225">
+          <description></description>
+          <long-description></long-description>
+          <tag line="225" name="internal" description=""/>
+        </docblock>
+        <argument line="228">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="228">
+          <name>$content</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="228">
+          <name>$contentType</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="228">
+          <name>$charset</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="241" package="Default">
+        <name>doPut</name>
+        <full_name>doPut</full_name>
+        <docblock line="238">
+          <description></description>
+          <long-description></long-description>
+          <tag line="238" name="internal" description=""/>
+        </docblock>
+        <argument line="241">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="241">
+          <name>$content</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="241">
+          <name>$contentType</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="241">
+          <name>$charset</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="254" package="Default">
+        <name>doRequest</name>
+        <full_name>doRequest</full_name>
+        <docblock line="251">
+          <description></description>
+          <long-description></long-description>
+          <tag line="251" name="internal" description=""/>
+        </docblock>
+        <argument line="254">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="254">
+          <name>$method</name>
+          <default>"GET"</default>
+          <type/>
+        </argument>
+        <argument line="254">
+          <name>$content</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="254">
+          <name>$contentType</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="254">
+          <name>$charset</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="310" package="Default">
+        <name>getLastRequest</name>
+        <full_name>getLastRequest</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="315" package="Default">
+        <name>getLastRequestBody</name>
+        <full_name>getLastRequestBody</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="320" package="Default">
+        <name>getLastRequestCode</name>
+        <full_name>getLastRequestCode</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="325" package="Default">
+        <name>getLastRequestContentType</name>
+        <full_name>getLastRequestContentType</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="330" package="Default">
+        <name>getLastRequestContentLength</name>
+        <full_name>getLastRequestContentLength</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="335" package="Default">
+        <name>getLastRequestURL</name>
+        <full_name>getLastRequestURL</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="340" package="Default">
+        <name>getLastRequestMethod</name>
+        <full_name>getLastRequestMethod</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="345" package="Default">
+        <name>getLastRequestContentTypeSent</name>
+        <full_name>getLastRequestContentTypeSent</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="350" package="Default">
+        <name>getLastRequestContentSent</name>
+        <full_name>getLastRequestContentSent</full_name>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="359" package="Default">
+        <name>processTemplate</name>
+        <full_name>processTemplate</full_name>
+        <docblock line="356">
+          <description></description>
+          <long-description></long-description>
+          <tag line="356" name="internal" description=""/>
+        </docblock>
+        <argument line="359">
+          <name>$template</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="359">
+          <name>$values</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="378" package="Default">
+        <name>doXQuery</name>
+        <full_name>doXQuery</full_name>
+        <docblock line="375">
+          <description></description>
+          <long-description></long-description>
+          <tag line="375" name="internal" description=""/>
+        </docblock>
+        <argument line="378">
+          <name>$xmldata</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="378">
+          <name>$xquery</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="388" package="Default">
+        <name>doXQueryFromNode</name>
+        <full_name>doXQueryFromNode</full_name>
+        <docblock line="385">
+          <description></description>
+          <long-description></long-description>
+          <tag line="385" name="internal" description=""/>
+        </docblock>
+        <argument line="388">
+          <name>$xmlnode</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="388">
+          <name>$xquery</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="413" package="Default">
+        <name>getLinksArray</name>
+        <full_name>getLinksArray</full_name>
+        <docblock line="410">
+          <description></description>
+          <long-description></long-description>
+          <tag line="410" name="internal" description=""/>
+        </docblock>
+        <argument line="413">
+          <name>$xmlnode</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="440" package="Default">
+        <name>extractAllowableActions</name>
+        <full_name>extractAllowableActions</full_name>
+        <docblock line="437">
+          <description></description>
+          <long-description></long-description>
+          <tag line="437" name="internal" description=""/>
+        </docblock>
+        <argument line="440">
+          <name>$xmldata</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="450" package="Default">
+        <name>extractAllowableActionsFromNode</name>
+        <full_name>extractAllowableActionsFromNode</full_name>
+        <docblock line="447">
+          <description></description>
+          <long-description></long-description>
+          <tag line="447" name="internal" description=""/>
+        </docblock>
+        <argument line="450">
+          <name>$xmlnode</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="468" package="Default">
+        <name>extractObject</name>
+        <full_name>extractObject</full_name>
+        <docblock line="465">
+          <description></description>
+          <long-description></long-description>
+          <tag line="465" name="internal" description=""/>
+        </docblock>
+        <argument line="468">
+          <name>$xmldata</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="479" package="Default">
+        <name>extractObjectFromNode</name>
+        <full_name>extractObjectFromNode</full_name>
+        <docblock line="476">
+          <description></description>
+          <long-description></long-description>
+          <tag line="476" name="internal" description=""/>
+        </docblock>
+        <argument line="479">
+          <name>$xmlnode</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="533" package="Default">
+        <name>handleSpaces</name>
+        <full_name>handleSpaces</full_name>
+        <docblock line="530">
+          <description></description>
+          <long-description></long-description>
+          <tag line="530" name="internal" description=""/>
+        </docblock>
+        <argument line="533">
+          <name>$path</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="541" package="Default">
+        <name>extractTypeDef</name>
+        <full_name>extractTypeDef</full_name>
+        <docblock line="538">
+          <description></description>
+          <long-description></long-description>
+          <tag line="538" name="internal" description=""/>
+        </docblock>
+        <argument line="541">
+          <name>$xmldata</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="552" package="Default">
+        <name>extractTypeDefFromNode</name>
+        <full_name>extractTypeDefFromNode</full_name>
+        <docblock line="549">
+          <description></description>
+          <long-description></long-description>
+          <tag line="549" name="internal" description=""/>
+        </docblock>
+        <argument line="552">
+          <name>$xmlnode</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="619" package="Default">
+        <name>extractObjectFeed</name>
+        <full_name>extractObjectFeed</full_name>
+        <docblock line="616">
+          <description></description>
+          <long-description></long-description>
+          <tag line="616" name="internal" description=""/>
+        </docblock>
+        <argument line="619">
+          <name>$xmldata</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="630" package="Default">
+        <name>extractObjectFeedFromNode</name>
+        <full_name>extractObjectFeedFromNode</full_name>
+        <docblock line="627">
+          <description></description>
+          <long-description></long-description>
+          <tag line="627" name="internal" description=""/>
+        </docblock>
+        <argument line="630">
+          <name>$xmlnode</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="658" package="Default">
+        <name>extractTypeFeed</name>
+        <full_name>extractTypeFeed</full_name>
+        <docblock line="655">
+          <description></description>
+          <long-description></long-description>
+          <tag line="655" name="internal" description=""/>
+        </docblock>
+        <argument line="658">
+          <name>$xmldata</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="669" package="Default">
+        <name>extractTypeFeedFromNode</name>
+        <full_name>extractTypeFeedFromNode</full_name>
+        <docblock line="666">
+          <description></description>
+          <long-description></long-description>
+          <tag line="666" name="internal" description=""/>
+        </docblock>
+        <argument line="669">
+          <name>$xmlnode</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="692" package="Default">
+        <name>extractWorkspace</name>
+        <full_name>extractWorkspace</full_name>
+        <docblock line="689">
+          <description></description>
+          <long-description></long-description>
+          <tag line="689" name="internal" description=""/>
+        </docblock>
+        <argument line="692">
+          <name>$xmldata</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="703" package="Default">
+        <name>extractWorkspaceFromNode</name>
+        <full_name>extractWorkspaceFromNode</full_name>
+        <docblock line="700">
+          <description></description>
+          <long-description></long-description>
+          <tag line="700" name="internal" description=""/>
+        </docblock>
+        <argument line="703">
+          <name>$xmlnode</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <markers>
+      <todo line="185">Make this work with cookies</todo>
+      <todo line="295">Make this storage optional</todo>
+      <todo line="393">Review</todo>
+      <todo line="495">Maybe use -&gt;length=0 to even detect null values</todo>
+      <todo line="511">RRM FIX THIS</todo>
+      <todo line="583">RRM FIX THIS</todo>
+    </markers>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file cmis/cmis_repository_wrapper.php</error>
+      <error line="40" code="50000">No DocBlock was found for \CmisInvalidArgumentException</error>
+      <error line="41" code="50000">No DocBlock was found for \CmisObjectNotFoundException</error>
+      <error line="42" code="50000">No DocBlock was found for \CmisPermissionDeniedException</error>
+      <error line="43" code="50000">No DocBlock was found for \CmisNotSupportedException</error>
+      <error line="44" code="50000">No DocBlock was found for \CmisNotImplementedException</error>
+      <error line="45" code="50000">No DocBlock was found for \CmisConstraintException</error>
+      <error line="46" code="50000">No DocBlock was found for \CmisRuntimeException</error>
+      <critical line="48" code="50005">No short description for class \CMISRepositoryWrapper</critical>
+      <critical line="66" code="50019">No short description for property $url</critical>
+      <critical line="71" code="50019">No short description for property $username</critical>
+      <critical line="76" code="50019">No short description for property $password</critical>
+      <critical line="81" code="50019">No short description for property $authenticated</critical>
+      <critical line="86" code="50019">No short description for property $workspace</critical>
+      <critical line="91" code="50019">No short description for property $last_request</critical>
+      <critical line="96" code="50019">No short description for property $do_not_urlencode</critical>
+      <critical line="101" code="50019">No short description for property $_addlCurlOptions</critical>
+      <critical line="107" code="50019">No short description for property $namespaces</critical>
+      <error line="118" code="50012">No short description for method __construct()</error>
+      <error line="118" code="50015">Argument $url is missing from the Docblock of __construct()</error>
+      <error line="118" code="50015">Argument $username is missing from the Docblock of __construct()</error>
+      <error line="118" code="50015">Argument $password is missing from the Docblock of __construct()</error>
+      <error line="118" code="50015">Argument $options is missing from the Docblock of __construct()</error>
+      <error line="118" code="50015">Argument $addlCurlOptions is missing from the Docblock of __construct()</error>
+      <error line="130" code="50012">No short description for method getAsArray()</error>
+      <error line="130" code="50015">Argument $prop is missing from the Docblock of getAsArray()</error>
+      <error line="144" code="50012">No short description for method getOpUrl()</error>
+      <error line="144" code="50015">Argument $url is missing from the Docblock of getOpUrl()</error>
+      <error line="144" code="50015">Argument $options is missing from the Docblock of getOpUrl()</error>
+      <error line="159" code="50012">No short description for method convertStatusCode()</error>
+      <error line="159" code="50015">Argument $code is missing from the Docblock of convertStatusCode()</error>
+      <error line="159" code="50015">Argument $message is missing from the Docblock of convertStatusCode()</error>
+      <error line="180" code="50012">No short description for method connect()</error>
+      <error line="180" code="50015">Argument $url is missing from the Docblock of connect()</error>
+      <error line="180" code="50015">Argument $username is missing from the Docblock of connect()</error>
+      <error line="180" code="50015">Argument $password is missing from the Docblock of connect()</error>
+      <error line="180" code="50015">Argument $options is missing from the Docblock of connect()</error>
+      <error line="199" code="50012">No short description for method doGet()</error>
+      <error line="199" code="50015">Argument $url is missing from the Docblock of doGet()</error>
+      <error line="212" code="50012">No short description for method doDelete()</error>
+      <error line="212" code="50015">Argument $url is missing from the Docblock of doDelete()</error>
+      <error line="225" code="50012">No short description for method doPost()</error>
+      <error line="225" code="50015">Argument $url is missing from the Docblock of doPost()</error>
+      <error line="225" code="50015">Argument $content is missing from the Docblock of doPost()</error>
+      <error line="225" code="50015">Argument $contentType is missing from the Docblock of doPost()</error>
+      <error line="225" code="50015">Argument $charset is missing from the Docblock of doPost()</error>
+      <error line="238" code="50012">No short description for method doPut()</error>
+      <error line="238" code="50015">Argument $url is missing from the Docblock of doPut()</error>
+      <error line="238" code="50015">Argument $content is missing from the Docblock of doPut()</error>
+      <error line="238" code="50015">Argument $contentType is missing from the Docblock of doPut()</error>
+      <error line="238" code="50015">Argument $charset is missing from the Docblock of doPut()</error>
+      <error line="251" code="50012">No short description for method doRequest()</error>
+      <error line="251" code="50015">Argument $url is missing from the Docblock of doRequest()</error>
+      <error line="251" code="50015">Argument $method is missing from the Docblock of doRequest()</error>
+      <error line="251" code="50015">Argument $content is missing from the Docblock of doRequest()</error>
+      <error line="251" code="50015">Argument $contentType is missing from the Docblock of doRequest()</error>
+      <error line="251" code="50015">Argument $charset is missing from the Docblock of doRequest()</error>
+      <error line="310" code="50010">No DocBlock was found for method getLastRequest()</error>
+      <error line="315" code="50010">No DocBlock was found for method getLastRequestBody()</error>
+      <error line="320" code="50010">No DocBlock was found for method getLastRequestCode()</error>
+      <error line="325" code="50010">No DocBlock was found for method getLastRequestContentType()</error>
+      <error line="330" code="50010">No DocBlock was found for method getLastRequestContentLength()</error>
+      <error line="335" code="50010">No DocBlock was found for method getLastRequestURL()</error>
+      <error line="340" code="50010">No DocBlock was found for method getLastRequestMethod()</error>
+      <error line="345" code="50010">No DocBlock was found for method getLastRequestContentTypeSent()</error>
+      <error line="350" code="50010">No DocBlock was found for method getLastRequestContentSent()</error>
+      <error line="356" code="50012">No short description for method processTemplate()</error>
+      <error line="356" code="50015">Argument $template is missing from the Docblock of processTemplate()</error>
+      <error line="356" code="50015">Argument $values is missing from the Docblock of processTemplate()</error>
+      <error line="375" code="50012">No short description for method doXQuery()</error>
+      <error line="375" code="50015">Argument $xmldata is missing from the Docblock of doXQuery()</error>
+      <error line="375" code="50015">Argument $xquery is missing from the Docblock of doXQuery()</error>
+      <error line="385" code="50012">No short description for method doXQueryFromNode()</error>
+      <error line="385" code="50015">Argument $xmlnode is missing from the Docblock of doXQueryFromNode()</error>
+      <error line="385" code="50015">Argument $xquery is missing from the Docblock of doXQueryFromNode()</error>
+      <error line="410" code="50012">No short description for method getLinksArray()</error>
+      <error line="410" code="50015">Argument $xmlnode is missing from the Docblock of getLinksArray()</error>
+      <error line="437" code="50012">No short description for method extractAllowableActions()</error>
+      <error line="437" code="50015">Argument $xmldata is missing from the Docblock of extractAllowableActions()</error>
+      <error line="447" code="50012">No short description for method extractAllowableActionsFromNode()</error>
+      <error line="447" code="50015">Argument $xmlnode is missing from the Docblock of extractAllowableActionsFromNode()</error>
+      <error line="465" code="50012">No short description for method extractObject()</error>
+      <error line="465" code="50015">Argument $xmldata is missing from the Docblock of extractObject()</error>
+      <error line="476" code="50012">No short description for method extractObjectFromNode()</error>
+      <error line="476" code="50015">Argument $xmlnode is missing from the Docblock of extractObjectFromNode()</error>
+      <error line="530" code="50012">No short description for method handleSpaces()</error>
+      <error line="530" code="50015">Argument $path is missing from the Docblock of handleSpaces()</error>
+      <error line="538" code="50012">No short description for method extractTypeDef()</error>
+      <error line="538" code="50015">Argument $xmldata is missing from the Docblock of extractTypeDef()</error>
+      <error line="549" code="50012">No short description for method extractTypeDefFromNode()</error>
+      <error line="549" code="50015">Argument $xmlnode is missing from the Docblock of extractTypeDefFromNode()</error>
+      <error line="616" code="50012">No short description for method extractObjectFeed()</error>
+      <error line="616" code="50015">Argument $xmldata is missing from the Docblock of extractObjectFeed()</error>
+      <error line="627" code="50012">No short description for method extractObjectFeedFromNode()</error>
+      <error line="627" code="50015">Argument $xmlnode is missing from the Docblock of extractObjectFeedFromNode()</error>
+      <error line="655" code="50012">No short description for method extractTypeFeed()</error>
+      <error line="655" code="50015">Argument $xmldata is missing from the Docblock of extractTypeFeed()</error>
+      <error line="666" code="50012">No short description for method extractTypeFeedFromNode()</error>
+      <error line="666" code="50015">Argument $xmlnode is missing from the Docblock of extractTypeFeedFromNode()</error>
+      <error line="689" code="50012">No short description for method extractWorkspace()</error>
+      <error line="689" code="50015">Argument $xmldata is missing from the Docblock of extractWorkspace()</error>
+      <error line="700" code="50012">No short description for method extractWorkspaceFromNode()</error>
+      <error line="700" code="50015">Argument $xmlnode is missing from the Docblock of extractWorkspaceFromNode()</error>
+    </parse_markers>
+  </file>
+  <file path="cmis/cmis_service.php" hash="b7b0f860eaca56d898e948d866678584" package="Default">
+    <include line="19" type="Require Once" package="Default">
+      <name>cmis_repository_wrapper.php</name>
+    </include>
+    <constant namespace="global" line="24" package="Default">
+      <name>OPT_MAX_ITEMS</name>
+      <full_name>\OPT_MAX_ITEMS</full_name>
+      <value>"maxItems"</value>
+    </constant>
+    <constant namespace="global" line="25" package="Default">
+      <name>OPT_SKIP_COUNT</name>
+      <full_name>\OPT_SKIP_COUNT</full_name>
+      <value>"skipCount"</value>
+    </constant>
+    <constant namespace="global" line="26" package="Default">
+      <name>OPT_FILTER</name>
+      <full_name>\OPT_FILTER</full_name>
+      <value>"filter"</value>
+    </constant>
+    <constant namespace="global" line="27" package="Default">
+      <name>OPT_INCLUDE_PROPERTY_DEFINITIONS</name>
+      <full_name>\OPT_INCLUDE_PROPERTY_DEFINITIONS</full_name>
+      <value>"includePropertyDefinitions"</value>
+    </constant>
+    <constant namespace="global" line="28" package="Default">
+      <name>OPT_INCLUDE_RELATIONSHIPS</name>
+      <full_name>\OPT_INCLUDE_RELATIONSHIPS</full_name>
+      <value>"includeRelationships"</value>
+    </constant>
+    <constant namespace="global" line="29" package="Default">
+      <name>OPT_INCLUDE_POLICY_IDS</name>
+      <full_name>\OPT_INCLUDE_POLICY_IDS</full_name>
+      <value>"includePolicyIds"</value>
+    </constant>
+    <constant namespace="global" line="30" package="Default">
+      <name>OPT_RENDITION_FILTER</name>
+      <full_name>\OPT_RENDITION_FILTER</full_name>
+      <value>"renditionFilter"</value>
+    </constant>
+    <constant namespace="global" line="31" package="Default">
+      <name>OPT_INCLUDE_ACL</name>
+      <full_name>\OPT_INCLUDE_ACL</full_name>
+      <value>"includeACL"</value>
+    </constant>
+    <constant namespace="global" line="32" package="Default">
+      <name>OPT_INCLUDE_ALLOWABLE_ACTIONS</name>
+      <full_name>\OPT_INCLUDE_ALLOWABLE_ACTIONS</full_name>
+      <value>"includeAllowableActions"</value>
+    </constant>
+    <constant namespace="global" line="33" package="Default">
+      <name>OPT_DEPTH</name>
+      <full_name>\OPT_DEPTH</full_name>
+      <value>"depth"</value>
+    </constant>
+    <constant namespace="global" line="34" package="Default">
+      <name>OPT_CHANGE_LOG_TOKEN</name>
+      <full_name>\OPT_CHANGE_LOG_TOKEN</full_name>
+      <value>"changeLogToken"</value>
+    </constant>
+    <constant namespace="global" line="35" package="Default">
+      <name>OPT_CHECK_IN_COMMENT</name>
+      <full_name>\OPT_CHECK_IN_COMMENT</full_name>
+      <value>"checkinComment"</value>
+    </constant>
+    <constant namespace="global" line="36" package="Default">
+      <name>OPT_CHECK_IN</name>
+      <full_name>\OPT_CHECK_IN</full_name>
+      <value>"checkin"</value>
+    </constant>
+    <constant namespace="global" line="37" package="Default">
+      <name>OPT_MAJOR_VERSION</name>
+      <full_name>\OPT_MAJOR_VERSION</full_name>
+      <value>"major"</value>
+    </constant>
+    <constant namespace="global" line="39" package="Default">
+      <name>COLLECTION_ROOT_FOLDER</name>
+      <full_name>\COLLECTION_ROOT_FOLDER</full_name>
+      <value>"root"</value>
+    </constant>
+    <constant namespace="global" line="40" package="Default">
+      <name>COLLECTION_TYPES</name>
+      <full_name>\COLLECTION_TYPES</full_name>
+      <value>"types"</value>
+    </constant>
+    <constant namespace="global" line="41" package="Default">
+      <name>COLLECTION_CHECKED_OUT</name>
+      <full_name>\COLLECTION_CHECKED_OUT</full_name>
+      <value>"checkedout"</value>
+    </constant>
+    <constant namespace="global" line="42" package="Default">
+      <name>COLLECTION_QUERY</name>
+      <full_name>\COLLECTION_QUERY</full_name>
+      <value>"query"</value>
+    </constant>
+    <constant namespace="global" line="43" package="Default">
+      <name>COLLECTION_UNFILED</name>
+      <full_name>\COLLECTION_UNFILED</full_name>
+      <value>"unfiled"</value>
+    </constant>
+    <constant namespace="global" line="45" package="Default">
+      <name>URI_TEMPLATE_OBJECT_BY_ID</name>
+      <full_name>\URI_TEMPLATE_OBJECT_BY_ID</full_name>
+      <value>"objectbyid"</value>
+    </constant>
+    <constant namespace="global" line="46" package="Default">
+      <name>URI_TEMPLATE_OBJECT_BY_PATH</name>
+      <full_name>\URI_TEMPLATE_OBJECT_BY_PATH</full_name>
+      <value>"objectbypath"</value>
+    </constant>
+    <constant namespace="global" line="47" package="Default">
+      <name>URI_TEMPLATE_TYPE_BY_ID</name>
+      <full_name>\URI_TEMPLATE_TYPE_BY_ID</full_name>
+      <value>"typebyid"</value>
+    </constant>
+    <constant namespace="global" line="48" package="Default">
+      <name>URI_TEMPLATE_QUERY</name>
+      <full_name>\URI_TEMPLATE_QUERY</full_name>
+      <value>"query"</value>
+    </constant>
+    <constant namespace="global" line="50" package="Default">
+      <name>LINK_SELF</name>
+      <full_name>\LINK_SELF</full_name>
+      <value>"self"</value>
+    </constant>
+    <constant namespace="global" line="51" package="Default">
+      <name>LINK_SERVICE</name>
+      <full_name>\LINK_SERVICE</full_name>
+      <value>"service"</value>
+    </constant>
+    <constant namespace="global" line="52" package="Default">
+      <name>LINK_DESCRIBED_BY</name>
+      <full_name>\LINK_DESCRIBED_BY</full_name>
+      <value>"describedby"</value>
+    </constant>
+    <constant namespace="global" line="53" package="Default">
+      <name>LINK_VIA</name>
+      <full_name>\LINK_VIA</full_name>
+      <value>"via"</value>
+    </constant>
+    <constant namespace="global" line="54" package="Default">
+      <name>LINK_EDIT_MEDIA</name>
+      <full_name>\LINK_EDIT_MEDIA</full_name>
+      <value>"edit-media"</value>
+    </constant>
+    <constant namespace="global" line="55" package="Default">
+      <name>LINK_EDIT</name>
+      <full_name>\LINK_EDIT</full_name>
+      <value>"edit"</value>
+    </constant>
+    <constant namespace="global" line="56" package="Default">
+      <name>LINK_ALTERNATE</name>
+      <full_name>\LINK_ALTERNATE</full_name>
+      <value>"alternate"</value>
+    </constant>
+    <constant namespace="global" line="57" package="Default">
+      <name>LINK_FIRST</name>
+      <full_name>\LINK_FIRST</full_name>
+      <value>"first"</value>
+    </constant>
+    <constant namespace="global" line="58" package="Default">
+      <name>LINK_PREVIOUS</name>
+      <full_name>\LINK_PREVIOUS</full_name>
+      <value>"previous"</value>
+    </constant>
+    <constant namespace="global" line="59" package="Default">
+      <name>LINK_NEXT</name>
+      <full_name>\LINK_NEXT</full_name>
+      <value>"next"</value>
+    </constant>
+    <constant namespace="global" line="60" package="Default">
+      <name>LINK_LAST</name>
+      <full_name>\LINK_LAST</full_name>
+      <value>"last"</value>
+    </constant>
+    <constant namespace="global" line="61" package="Default">
+      <name>LINK_UP</name>
+      <full_name>\LINK_UP</full_name>
+      <value>"up"</value>
+    </constant>
+    <constant namespace="global" line="62" package="Default">
+      <name>LINK_DOWN</name>
+      <full_name>\LINK_DOWN</full_name>
+      <value>"down"</value>
+    </constant>
+    <constant namespace="global" line="63" package="Default">
+      <name>LINK_DOWN_TREE</name>
+      <full_name>\LINK_DOWN_TREE</full_name>
+      <value>"down-tree"</value>
+    </constant>
+    <constant namespace="global" line="64" package="Default">
+      <name>LINK_VERSION_HISTORY</name>
+      <full_name>\LINK_VERSION_HISTORY</full_name>
+      <value>"version-history"</value>
+    </constant>
+    <constant namespace="global" line="65" package="Default">
+      <name>LINK_CURRENT_VERSION</name>
+      <full_name>\LINK_CURRENT_VERSION</full_name>
+      <value>"current-version"</value>
+    </constant>
+    <constant namespace="global" line="68" package="Default">
+      <name>LINK_ALLOWABLE_ACTIONS</name>
+      <full_name>\LINK_ALLOWABLE_ACTIONS</full_name>
+      <value>"http://docs.oasis-open.org/ns/cmis/link/200908/allowableactions"</value>
+    </constant>
+    <constant namespace="global" line="69" package="Default">
+      <name>LINK_RELATIONSHIPS</name>
+      <full_name>\LINK_RELATIONSHIPS</full_name>
+      <value>"http://docs.oasis-open.org/ns/cmis/link/200908/relationships"</value>
+    </constant>
+    <constant namespace="global" line="70" package="Default">
+      <name>LINK_SOURCE</name>
+      <full_name>\LINK_SOURCE</full_name>
+      <value>"http://docs.oasis-open.org/ns/cmis/link/200908/source"</value>
+    </constant>
+    <constant namespace="global" line="71" package="Default">
+      <name>LINK_TARGET</name>
+      <full_name>\LINK_TARGET</full_name>
+      <value>"http://docs.oasis-open.org/ns/cmis/link/200908/target"</value>
+    </constant>
+    <constant namespace="global" line="72" package="Default">
+      <name>LINK_POLICIES</name>
+      <full_name>\LINK_POLICIES</full_name>
+      <value>"http://docs.oasis-open.org/ns/cmis/link/200908/policies"</value>
+    </constant>
+    <constant namespace="global" line="73" package="Default">
+      <name>LINK_ACL</name>
+      <full_name>\LINK_ACL</full_name>
+      <value>"http://docs.oasis-open.org/ns/cmis/link/200908/acl"</value>
+    </constant>
+    <constant namespace="global" line="74" package="Default">
+      <name>LINK_CHANGES</name>
+      <full_name>\LINK_CHANGES</full_name>
+      <value>"http://docs.oasis-open.org/ns/cmis/link/200908/changes"</value>
+    </constant>
+    <constant namespace="global" line="75" package="Default">
+      <name>LINK_FOLDER_TREE</name>
+      <full_name>\LINK_FOLDER_TREE</full_name>
+      <value>"http://docs.oasis-open.org/ns/cmis/link/200908/foldertree"</value>
+    </constant>
+    <constant namespace="global" line="76" package="Default">
+      <name>LINK_ROOT_DESCENDANTS</name>
+      <full_name>\LINK_ROOT_DESCENDANTS</full_name>
+      <value>"http://docs.oasis-open.org/ns/cmis/link/200908/rootdescendants"</value>
+    </constant>
+    <constant namespace="global" line="77" package="Default">
+      <name>LINK_TYPE_DESCENDANTS</name>
+      <full_name>\LINK_TYPE_DESCENDANTS</full_name>
+      <value>"http://docs.oasis-open.org/ns/cmis/link/200908/typedescendants"</value>
+    </constant>
+    <constant namespace="global" line="79" package="Default">
+      <name>MIME_ATOM_XML</name>
+      <full_name>\MIME_ATOM_XML</full_name>
+      <value>'application/atom+xml'</value>
+    </constant>
+    <constant namespace="global" line="80" package="Default">
+      <name>MIME_ATOM_XML_ENTRY</name>
+      <full_name>\MIME_ATOM_XML_ENTRY</full_name>
+      <value>'application/atom+xml;type=entry'</value>
+    </constant>
+    <constant namespace="global" line="81" package="Default">
+      <name>MIME_ATOM_XML_FEED</name>
+      <full_name>\MIME_ATOM_XML_FEED</full_name>
+      <value>'application/atom+xml;type=feed'</value>
+    </constant>
+    <constant namespace="global" line="82" package="Default">
+      <name>MIME_CMIS_TREE</name>
+      <full_name>\MIME_CMIS_TREE</full_name>
+      <value>'application/cmistree+xml'</value>
+    </constant>
+    <constant namespace="global" line="83" package="Default">
+      <name>MIME_CMIS_QUERY</name>
+      <full_name>\MIME_CMIS_QUERY</full_name>
+      <value>'application/cmisquery+xml'</value>
+    </constant>
+    <class final="false" abstract="false" namespace="global" line="92" package="Default">
+      <extends>\CMISRepositoryWrapper</extends>
+      <name>CMISService</name>
+      <full_name>\CMISService</full_name>
+      <docblock line="86">
+        <description>CMIS Service</description>
+        <long-description></long-description>
+        <tag line="86" name="api" description="CMIS"/>
+        <tag line="86" name="since" description="CMIS-1.0"/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="97" namespace="global" package="Default">
+        <name>$_link_cache</name>
+        <default></default>
+        <docblock line="94">
+          <description></description>
+          <long-description></long-description>
+          <tag line="94" name="internal" description=""/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="102" namespace="global" package="Default">
+        <name>$_title_cache</name>
+        <default></default>
+        <docblock line="99">
+          <description></description>
+          <long-description></long-description>
+          <tag line="99" name="internal" description=""/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="107" namespace="global" package="Default">
+        <name>$_objTypeId_cache</name>
+        <default></default>
+        <docblock line="104">
+          <description></description>
+          <long-description></long-description>
+          <tag line="104" name="internal" description=""/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="112" namespace="global" package="Default">
+        <name>$_type_cache</name>
+        <default></default>
+        <docblock line="109">
+          <description></description>
+          <long-description></long-description>
+          <tag line="109" name="internal" description=""/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="117" namespace="global" package="Default">
+        <name>$_changeToken_cache</name>
+        <default></default>
+        <docblock line="114">
+          <description></description>
+          <long-description></long-description>
+          <tag line="114" name="internal" description=""/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="130" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="119">
+          <description>Construct a new CMISService Connector</description>
+          <long-description></long-description>
+          <tag line="119" name="param" description="Endpoint URL" type="String" variable="$url">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="119" name="param" description="Username" type="String" variable="$username">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="119" name="param" description="Password" type="String" variable="$password">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="119" name="param" description="Connection Options" type="mixed[]" variable="$options">
+            <type by_reference="false">mixed[]</type>
+          </tag>
+          <tag line="119" name="param" description="Additional CURL Options" type="mixed[]" variable="$addlCurlOptions">
+            <type by_reference="false">mixed[]</type>
+          </tag>
+          <tag line="119" name="api" description="CMIS-Service"/>
+          <tag line="119" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="130">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="130">
+          <name>$username</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="130">
+          <name>$password</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="130">
+          <name>$options</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="130">
+          <name>$addlCurlOptions</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="145" package="Default">
+        <name>cacheObjectInfo</name>
+        <full_name>cacheObjectInfo</full_name>
+        <docblock line="142">
+          <description></description>
+          <long-description></long-description>
+          <tag line="142" name="internal" description=""/>
+        </docblock>
+        <argument line="145">
+          <name>$obj</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="168" package="Default">
+        <name>getMultiValuedProp</name>
+        <full_name>getMultiValuedProp</full_name>
+        <docblock line="154">
+          <description>Get an Object's property and return it as an array</description>
+          <long-description>&lt;p&gt;This returns an array even if it is a scalar or null&lt;/p&gt;</long-description>
+          <tag line="154" name="todo" description="Allow the getProperty method to query the object type information and&#10;return multivalue properties as arrays even if empty or if only a single value&#10;is present."/>
+          <tag line="154" name="param" description="Object" type="Object" variable="$obj">
+            <type by_reference="false">Object</type>
+          </tag>
+          <tag line="154" name="param" description="Property Name" type="String" variable="$propName">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="154" name="returns" description="mixed[]"/>
+          <tag line="154" name="api" description="CMIS-Helper"/>
+          <tag line="154" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="168">
+          <name>$obj</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="168">
+          <name>$propName</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="178" package="Default">
+        <name>cacheFeedInfo</name>
+        <full_name>cacheFeedInfo</full_name>
+        <docblock line="175">
+          <description></description>
+          <long-description></long-description>
+          <tag line="175" name="internal" description=""/>
+        </docblock>
+        <argument line="178">
+          <name>$objs</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="187" package="Default">
+        <name>cacheTypeFeedInfo</name>
+        <full_name>cacheTypeFeedInfo</full_name>
+        <docblock line="184">
+          <description></description>
+          <long-description></long-description>
+          <tag line="184" name="internal" description=""/>
+        </docblock>
+        <argument line="187">
+          <name>$typs</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="196" package="Default">
+        <name>cacheTypeInfo</name>
+        <full_name>cacheTypeInfo</full_name>
+        <docblock line="193">
+          <description></description>
+          <long-description></long-description>
+          <tag line="193" name="internal" description=""/>
+        </docblock>
+        <argument line="196">
+          <name>$tDef</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="204" package="Default">
+        <name>getPropertyType</name>
+        <full_name>getPropertyType</full_name>
+        <docblock line="201">
+          <description></description>
+          <long-description></long-description>
+          <tag line="201" name="internal" description=""/>
+        </docblock>
+        <argument line="204">
+          <name>$typeId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="204">
+          <name>$propertyId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="217" package="Default">
+        <name>getObjectType</name>
+        <full_name>getObjectType</full_name>
+        <docblock line="214">
+          <description></description>
+          <long-description></long-description>
+          <tag line="214" name="internal" description=""/>
+        </docblock>
+        <argument line="217">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="228" package="Default">
+        <name>getTitle</name>
+        <full_name>getTitle</full_name>
+        <docblock line="225">
+          <description></description>
+          <long-description></long-description>
+          <tag line="225" name="internal" description=""/>
+        </docblock>
+        <argument line="228">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="239" package="Default">
+        <name>getTypeLink</name>
+        <full_name>getTypeLink</full_name>
+        <docblock line="236">
+          <description></description>
+          <long-description></long-description>
+          <tag line="236" name="internal" description=""/>
+        </docblock>
+        <argument line="239">
+          <name>$typeId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="239">
+          <name>$linkName</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="250" package="Default">
+        <name>getLink</name>
+        <full_name>getLink</full_name>
+        <docblock line="247">
+          <description></description>
+          <long-description></long-description>
+          <tag line="247" name="internal" description=""/>
+        </docblock>
+        <argument line="250">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="250">
+          <name>$linkName</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="265" package="Default">
+        <name>getRepositories</name>
+        <full_name>getRepositories</full_name>
+        <docblock line="260">
+          <description>Get an Object by Object Id</description>
+          <long-description></long-description>
+          <tag line="260" name="api" description="CMIS-RepositoryServices-NotImplemented"/>
+          <tag line="260" name="since" description="CMIS-1.0"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="275" package="Default">
+        <name>getRepositoryInfo</name>
+        <full_name>getRepositoryInfo</full_name>
+        <docblock line="269">
+          <description>Get Repository Information</description>
+          <long-description></long-description>
+          <tag line="269" name="returns" description="Object"/>
+          <tag line="269" name="api" description="CMIS-RepositoryServices"/>
+          <tag line="269" name="since" description="CMIS-1.0"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="290" package="Default">
+        <name>getTypeDescendants</name>
+        <full_name>getTypeDescendants</full_name>
+        <docblock line="279">
+          <description>Get a set of object-types that are descendants of the specified type</description>
+          <long-description>&lt;p&gt;If typeId is null, then the repository MUST return all types and ignore the depth parameter.&lt;/p&gt;</long-description>
+          <tag line="279" name="param" description="The typeId of an object-type specified in the repository" type="String" variable="$typeId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="279" name="param" description="the number of levels in the hierarchy to return (-1 == all)" type="\" variable="$depth"/>
+          <tag line="279" name="returns" description="Object The set of descendant object-types defined for the given typeId."/>
+          <tag line="279" name="api" description="CMIS-RepositoryServices"/>
+          <tag line="279" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="290">
+          <name>$typeId</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="290">
+          <name>$depth</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="290">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="317" package="Default">
+        <name>getTypeChildren</name>
+        <full_name>getTypeChildren</full_name>
+        <docblock line="307">
+          <description>Get a list of object-types that are children of the specified type</description>
+          <long-description>&lt;p&gt;If typeId is null, then the repository MUST return all base object-types.&lt;/p&gt;</long-description>
+          <tag line="307" name="param" description="The typeId of an object-type specified in the repository" type="String" variable="$typeId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="307" name="returns" description="Object The list of child object-types defined for the given typeId."/>
+          <tag line="307" name="api" description="CMIS-RepositoryServices"/>
+          <tag line="307" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="317">
+          <name>$typeId</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="317">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="341" package="Default">
+        <name>getTypeDefinition</name>
+        <full_name>getTypeDefinition</full_name>
+        <docblock line="333">
+          <description>Gets the definition of the specified object-type.</description>
+          <long-description></long-description>
+          <tag line="333" name="param" description="Object Type Id" type="String" variable="$typeId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="333" name="returns" description="Object Type Definition of the Specified Object"/>
+          <tag line="333" name="api" description="CMIS-RepositoryServices"/>
+          <tag line="333" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="341">
+          <name>$typeId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="341">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="358" package="Default">
+        <name>getObjectTypeDefinition</name>
+        <full_name>getObjectTypeDefinition</full_name>
+        <docblock line="351">
+          <description>Get an Object's Property Type by Object Id</description>
+          <long-description></long-description>
+          <tag line="351" name="param" description="Object Id" type="String" variable="$objectId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="351" name="returns" description="Object Type Definition of the Specified Object"/>
+          <tag line="351" name="api" description="CMIS-Helper"/>
+          <tag line="351" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="358">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="377" package="Default">
+        <name>createType</name>
+        <full_name>createType</full_name>
+        <docblock line="366">
+          <description>Creates a new type definition.</description>
+          <long-description>&lt;p&gt;Creates a new type definition that is a subtype of an existing specified parent type.
+Only properties that are new to this type (not inherited) are passed to this service.&lt;/p&gt;</long-description>
+          <tag line="366" name="param" description="A type definition object with the property definitions that are to change." type="String" variable="$objectType">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="366" name="returns" description="Object Type Definition of the Specified Object"/>
+          <tag line="366" name="api" description="CMIS-RepositoryServices-NotImplemented"/>
+          <tag line="366" name="since" description="CMIS-1.1"/>
+        </docblock>
+        <argument line="377">
+          <name>$objectType</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="392" package="Default">
+        <name>updateType</name>
+        <full_name>updateType</full_name>
+        <docblock line="381">
+          <description>Updates a type definition</description>
+          <long-description>&lt;p&gt;If you add an optional property to a type in error. There is no way to remove it/correct it - without
+deleting the type.&lt;/p&gt;</long-description>
+          <tag line="381" name="param" description="A type definition object with the property definitions that are to change." type="String" variable="$objectType">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="381" name="returns" description="Object The updated object-type including all property definitions."/>
+          <tag line="381" name="api" description="CMIS-RepositoryServices-NotImplemented"/>
+          <tag line="381" name="since" description="CMIS-1.1"/>
+        </docblock>
+        <argument line="392">
+          <name>$objectType</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="405" package="Default">
+        <name>deleteType</name>
+        <full_name>deleteType</full_name>
+        <docblock line="396">
+          <description>Deletes a type definition</description>
+          <long-description>&lt;p&gt;If there are object instances present of the type being deleted then this operation MUST fail.&lt;/p&gt;</long-description>
+          <tag line="396" name="param" description="The typeId of an object-type specified in the repository." type="String" variable="$typeId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="396" name="api" description="CMIS-RepositoryServices-NotImplemented"/>
+          <tag line="396" name="since" description="CMIS-1.1"/>
+        </docblock>
+        <argument line="405">
+          <name>$typeId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="418" package="Default">
+        <name>getFolderTree</name>
+        <full_name>getFolderTree</full_name>
+        <docblock line="409">
+          <description>Get the list of descendant folders contained in the specified folder.</description>
+          <long-description></long-description>
+          <tag line="409" name="param" description="the Object ID of the folder" type="String" variable="$folderId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="409" name="param" description="The number of levels of depth in the folder hierarchy from which to return results (-1 == ALL)." type="String" variable="$depth">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="409" name="returns" description="Object[] A tree of the child objects for the specified folder."/>
+          <tag line="409" name="api" description="CMIS-NavigationServices"/>
+          <tag line="409" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="418">
+          <name>$folderId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="418">
+          <name>$depth</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="418">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="438" package="Default">
+        <name>getDescendants</name>
+        <full_name>getDescendants</full_name>
+        <docblock line="429">
+          <description>Get the list of descendant objects contained in the specified folder.</description>
+          <long-description></long-description>
+          <tag line="429" name="param" description="the Object ID of the folder" type="String" variable="$folderId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="429" name="param" description="The number of levels of depth in the folder hierarchy from which to return results (-1 == ALL)." type="String" variable="$depth">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="429" name="returns" description="Object[] A tree of the child objects for the specified folder."/>
+          <tag line="429" name="api" description="CMIS-NavigationServices"/>
+          <tag line="429" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="438">
+          <name>$folderId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="438">
+          <name>$depth</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="438">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="457" package="Default">
+        <name>getChildren</name>
+        <full_name>getChildren</full_name>
+        <docblock line="449">
+          <description>Get the list of child objects contained in the specified folder.</description>
+          <long-description></long-description>
+          <tag line="449" name="param" description="the Object ID of the folder" type="String" variable="$folderId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="449" name="returns" description="Object[] A list of the child objects for the specified folder."/>
+          <tag line="449" name="api" description="CMIS-NavigationServices"/>
+          <tag line="449" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="457">
+          <name>$folderId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="457">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="474" package="Default">
+        <name>getFolderParent</name>
+        <full_name>getFolderParent</full_name>
+        <docblock line="466">
+          <description>Get the parent folder of the specified folder.</description>
+          <long-description></long-description>
+          <tag line="466" name="param" description="the Object ID of the folder" type="String" variable="$folderId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="466" name="returns" description="Object the parent folder."/>
+          <tag line="466" name="api" description="CMIS-NavigationServices"/>
+          <tag line="466" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="474">
+          <name>$folderId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="474">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="491" package="Default">
+        <name>getObjectParents</name>
+        <full_name>getObjectParents</full_name>
+        <docblock line="483">
+          <description>Get the parent folder(s) for the specified fileable object.</description>
+          <long-description></long-description>
+          <tag line="483" name="param" description="the Object ID of the Object" type="String" variable="$objectId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="483" name="returns" description="Object[] list of the parent folder(s) of the specified object."/>
+          <tag line="483" name="api" description="CMIS-NavigationServices"/>
+          <tag line="483" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="491">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="491">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="507" package="Default">
+        <name>getCheckedOutDocs</name>
+        <full_name>getCheckedOutDocs</full_name>
+        <docblock line="500">
+          <description>Get the list of documents that are checked out that the user has access to.</description>
+          <long-description>&lt;p&gt;.&lt;/p&gt;</long-description>
+          <tag line="500" name="returns" description="Object[] list of checked out documents."/>
+          <tag line="500" name="api" description="CMIS-NavigationServices"/>
+          <tag line="500" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="507">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="519" package="Default">
+        <name>getQueryTemplate</name>
+        <full_name>getQueryTemplate</full_name>
+        <docblock line="516">
+          <description></description>
+          <long-description></long-description>
+          <tag line="516" name="internal" description=""/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="550" package="Default">
+        <name>query</name>
+        <full_name>query</full_name>
+        <docblock line="542">
+          <description>Execute a CMIS Query</description>
+          <long-description></long-description>
+          <tag line="542" name="param" description="Query Statement" type="String" variable="$statement">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="542" name="param" description="Options" type="mixed[]" variable="$options">
+            <type by_reference="false">mixed[]</type>
+          </tag>
+          <tag line="542" name="returns" description="Object[] List of object propery values from query"/>
+          <tag line="542" name="api" description="CMIS-DiscoveryServices"/>
+          <tag line="542" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="550">
+          <name>$statement</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="550">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="567" package="Default">
+        <name>checkURL</name>
+        <full_name>checkURL</full_name>
+        <docblock line="564">
+          <description></description>
+          <long-description></long-description>
+          <tag line="564" name="internal" description=""/>
+        </docblock>
+        <argument line="567">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="567">
+          <name>$functionName</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="580" package="Default">
+        <name>getContentChanges</name>
+        <full_name>getContentChanges</full_name>
+        <docblock line="573">
+          <description>Get Content Changes</description>
+          <long-description></long-description>
+          <tag line="573" name="param" description="Options" type="mixed[]" variable="$options">
+            <type by_reference="false">mixed[]</type>
+          </tag>
+          <tag line="573" name="returns" description="Object[] List of Change Events"/>
+          <tag line="573" name="api" description="CMIS-DiscoveryServices"/>
+          <tag line="573" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="580">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="593" package="Default">
+        <name>getEntryTemplate</name>
+        <full_name>getEntryTemplate</full_name>
+        <docblock line="590">
+          <description></description>
+          <long-description></long-description>
+          <tag line="590" name="internal" description=""/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="617" package="Default">
+        <name>getPropertyTemplate</name>
+        <full_name>getPropertyTemplate</full_name>
+        <docblock line="614">
+          <description></description>
+          <long-description></long-description>
+          <tag line="614" name="internal" description=""/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="633" package="Default">
+        <name>processPropertyTemplates</name>
+        <full_name>processPropertyTemplates</full_name>
+        <docblock line="630">
+          <description></description>
+          <long-description></long-description>
+          <tag line="630" name="internal" description=""/>
+        </docblock>
+        <argument line="633">
+          <name>$objectType</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="633">
+          <name>$propMap</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="683" package="Default">
+        <name>getContentEntry</name>
+        <full_name>getContentEntry</full_name>
+        <docblock line="680">
+          <description></description>
+          <long-description></long-description>
+          <tag line="680" name="internal" description=""/>
+        </docblock>
+        <argument line="683">
+          <name>$content</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="683">
+          <name>$content_type</name>
+          <default>"application/octet-stream"</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="701" package="Default">
+        <name>getSummaryTemplate</name>
+        <full_name>getSummaryTemplate</full_name>
+        <docblock line="698">
+          <description></description>
+          <long-description></long-description>
+          <tag line="698" name="internal" description=""/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="714" package="Default">
+        <name>getContentTemplate</name>
+        <full_name>getContentTemplate</full_name>
+        <docblock line="711">
+          <description></description>
+          <long-description></long-description>
+          <tag line="711" name="internal" description=""/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="733" package="Default">
+        <name>createAtomEntry</name>
+        <full_name>createAtomEntry</full_name>
+        <docblock line="730">
+          <description></description>
+          <long-description></long-description>
+          <tag line="730" name="internal" description=""/>
+        </docblock>
+        <argument line="733">
+          <name>$name</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="733">
+          <name>$properties</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="745" package="Default">
+        <name>getObject</name>
+        <full_name>getObject</full_name>
+        <docblock line="737">
+          <description>Get an Object by Object Id</description>
+          <long-description></long-description>
+          <tag line="737" name="param" description="Object ID" type="String" variable="$objectId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="737" name="param" description="Options" type="mixed[]" variable="$options">
+            <type by_reference="false">mixed[]</type>
+          </tag>
+          <tag line="737" name="returns" description="Object"/>
+          <tag line="737" name="api" description="CMIS-ObjectServices"/>
+          <tag line="737" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="745">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="745">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="763" package="Default">
+        <name>getObjectByPath</name>
+        <full_name>getObjectByPath</full_name>
+        <docblock line="755">
+          <description>Get an Object by its Path</description>
+          <long-description></long-description>
+          <tag line="755" name="param" description="Path To Object" type="String" variable="$path">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="755" name="param" description="Options" type="mixed[]" variable="$options">
+            <type by_reference="false">mixed[]</type>
+          </tag>
+          <tag line="755" name="returns" description="Object"/>
+          <tag line="755" name="api" description="CMIS-ObjectServices"/>
+          <tag line="755" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="763">
+          <name>$path</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="763">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="781" package="Default">
+        <name>getProperties</name>
+        <full_name>getProperties</full_name>
+        <docblock line="773">
+          <description>Get an Object's Properties by Object Id</description>
+          <long-description></long-description>
+          <tag line="773" name="param" description="Object Id" type="String" variable="$objectId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="773" name="param" description="Options" type="mixed[]" variable="$options">
+            <type by_reference="false">mixed[]</type>
+          </tag>
+          <tag line="773" name="returns" description="Object"/>
+          <tag line="773" name="api" description="CMIS-ObjectServices"/>
+          <tag line="773" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="781">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="781">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="794" package="Default">
+        <name>getAllowableActions</name>
+        <full_name>getAllowableActions</full_name>
+        <docblock line="786">
+          <description>Get an Object's Allowable Actions</description>
+          <long-description></long-description>
+          <tag line="786" name="param" description="Object Id" type="String" variable="$objectId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="786" name="param" description="Options" type="mixed[]" variable="$options">
+            <type by_reference="false">mixed[]</type>
+          </tag>
+          <tag line="786" name="returns" description="mixed[]"/>
+          <tag line="786" name="api" description="CMIS-ObjectServices"/>
+          <tag line="786" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="794">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="794">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="811" package="Default">
+        <name>getRenditions</name>
+        <full_name>getRenditions</full_name>
+        <docblock line="801">
+          <description>Get the list of associated renditions for the specified object</description>
+          <long-description>&lt;p&gt;Only rendition attributes are returned, not rendition stream.&lt;/p&gt;</long-description>
+          <tag line="801" name="param" description="Object Id" type="String" variable="$objectId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="801" name="param" description="Options" type="mixed[]" variable="$options">
+            <type by_reference="false">mixed[]</type>
+          </tag>
+          <tag line="801" name="returns" description="Object[]"/>
+          <tag line="801" name="api" description="CMIS-ObjectServices"/>
+          <tag line="801" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="811">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="811">
+          <name>$options</name>
+          <default>array(OPT_RENDITION_FILTER =&gt; "*")</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="825" package="Default">
+        <name>getContentStream</name>
+        <full_name>getContentStream</full_name>
+        <docblock line="817">
+          <description>Get an Object's Allowable Actions</description>
+          <long-description></long-description>
+          <tag line="817" name="param" description="Object Id" type="String" variable="$objectId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="817" name="param" description="Options" type="mixed[]" variable="$options">
+            <type by_reference="false">mixed[]</type>
+          </tag>
+          <tag line="817" name="returns" description="String"/>
+          <tag line="817" name="api" description="CMIS-ObjectServices"/>
+          <tag line="817" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="825">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="825">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="835" package="Default">
+        <name>legacyPostObject</name>
+        <full_name>legacyPostObject</full_name>
+        <docblock line="832">
+          <description></description>
+          <long-description></long-description>
+          <tag line="832" name="internal" description=""/>
+        </docblock>
+        <argument line="835">
+          <name>$folderId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="835">
+          <name>$objectName</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="835">
+          <name>$objectType</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="835">
+          <name>$properties</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+        <argument line="835">
+          <name>$content</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="835">
+          <name>$content_type</name>
+          <default>"application/octet-stream"</default>
+          <type/>
+        </argument>
+        <argument line="835">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="891" package="Default">
+        <name>postObject</name>
+        <full_name>postObject</full_name>
+        <docblock line="888">
+          <description></description>
+          <long-description></long-description>
+          <tag line="888" name="internal" description=""/>
+        </docblock>
+        <argument line="891">
+          <name>$folderId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="891">
+          <name>$objectName</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="891">
+          <name>$objectType</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="891">
+          <name>$properties</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+        <argument line="891">
+          <name>$content</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="891">
+          <name>$content_type</name>
+          <default>"application/octet-stream"</default>
+          <type/>
+        </argument>
+        <argument line="891">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="915" package="Default">
+        <name>postEntry</name>
+        <full_name>postEntry</full_name>
+        <docblock line="912">
+          <description></description>
+          <long-description></long-description>
+          <tag line="912" name="internal" description=""/>
+        </docblock>
+        <argument line="915">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="915">
+          <name>$properties</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+        <argument line="915">
+          <name>$content</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="915">
+          <name>$content_type</name>
+          <default>"application/octet-stream"</default>
+          <type/>
+        </argument>
+        <argument line="915">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="952" package="Default">
+        <name>createDocument</name>
+        <full_name>createDocument</full_name>
+        <argument line="952">
+          <name>$folderId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="952">
+          <name>$fileName</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="952">
+          <name>$properties</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+        <argument line="952">
+          <name>$content</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="952">
+          <name>$content_type</name>
+          <default>"application/octet-stream"</default>
+          <type/>
+        </argument>
+        <argument line="952">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="956" package="Default">
+        <name>createDocumentFromSource</name>
+        <full_name>createDocumentFromSource</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="960" package="Default">
+        <name>createFolder</name>
+        <full_name>createFolder</full_name>
+        <argument line="960">
+          <name>$folderId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="960">
+          <name>$folderName</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="960">
+          <name>$properties</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+        <argument line="960">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="964" package="Default">
+        <name>createRelationship</name>
+        <full_name>createRelationship</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="968" package="Default">
+        <name>createPolicy</name>
+        <full_name>createPolicy</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="972" package="Default">
+        <name>createItem</name>
+        <full_name>createItem</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="976" package="Default">
+        <name>updateProperties</name>
+        <full_name>updateProperties</full_name>
+        <argument line="976">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="976">
+          <name>$properties</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+        <argument line="976">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1019" package="Default">
+        <name>bulkUpdateProperties</name>
+        <full_name>bulkUpdateProperties</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1023" package="Default">
+        <name>moveObject</name>
+        <full_name>moveObject</full_name>
+        <argument line="1023">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1023">
+          <name>$targetFolderId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1023">
+          <name>$sourceFolderId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1023">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1037" package="Default">
+        <name>deleteObject</name>
+        <full_name>deleteObject</full_name>
+        <docblock line="1030">
+          <description>Delete an Object</description>
+          <long-description></long-description>
+          <tag line="1030" name="param" description="Object ID" type="String" variable="$objectId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="1030" name="param" description="Options" type="mixed[]" variable="$options">
+            <type by_reference="false">mixed[]</type>
+          </tag>
+          <tag line="1030" name="api" description="CMIS-ObjectServices"/>
+          <tag line="1030" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="1037">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1037">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1053" package="Default">
+        <name>deleteTree</name>
+        <full_name>deleteTree</full_name>
+        <docblock line="1045">
+          <description>Delete an Object Tree</description>
+          <long-description></long-description>
+          <tag line="1045" name="param" description="Folder Object ID" type="String" variable="$folderId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="1045" name="param" description="Options" type="mixed[]" variable="$options">
+            <type by_reference="false">mixed[]</type>
+          </tag>
+          <tag line="1045" name="return" description="Array of problem objects" type="Object[]">
+            <type by_reference="false">Object[]</type>
+          </tag>
+          <tag line="1045" name="api" description="CMIS-ObjectServices"/>
+          <tag line="1045" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="1053">
+          <name>$folderId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1053">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1074" package="Default">
+        <name>setContentStream</name>
+        <full_name>setContentStream</full_name>
+        <docblock line="1064">
+          <description>Set an Objects Content Stream</description>
+          <long-description></long-description>
+          <tag line="1064" name="param" description="Object ID" type="String" variable="$objectId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="1064" name="param" description="Content to be appended" type="String" variable="$content">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="1064" name="param" description="Content Mime Type" type="String" variable="$content_type">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="1064" name="param" description="Options" type="mixed[]" variable="$options">
+            <type by_reference="false">mixed[]</type>
+          </tag>
+          <tag line="1064" name="returns" description="Object"/>
+          <tag line="1064" name="api" description="CMIS-ObjectServices"/>
+          <tag line="1064" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="1074">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1074">
+          <name>$content</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1074">
+          <name>$content_type</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1074">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1090" package="Default">
+        <name>appendContentStream</name>
+        <full_name>appendContentStream</full_name>
+        <docblock line="1080">
+          <description>Append Content to an Objects Content Stream</description>
+          <long-description></long-description>
+          <tag line="1080" name="param" description="Object ID" type="String" variable="$objectId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="1080" name="param" description="Content to be appended" type="String" variable="$content">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="1080" name="param" description="Content Mime Type" type="String" variable="$content_type">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="1080" name="param" description="Options" type="mixed[]" variable="$options">
+            <type by_reference="false">mixed[]</type>
+          </tag>
+          <tag line="1080" name="returns" description="Object"/>
+          <tag line="1080" name="api" description="CMIS-ObjectServices-NotImplemented"/>
+          <tag line="1080" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="1090">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1090">
+          <name>$content</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1090">
+          <name>$content_type</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1090">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1101" package="Default">
+        <name>deleteContentStream</name>
+        <full_name>deleteContentStream</full_name>
+        <docblock line="1094">
+          <description>Delete an Objects Content Stream</description>
+          <long-description></long-description>
+          <tag line="1094" name="param" description="Object ID" type="String" variable="$objectId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="1094" name="param" description="Options" type="mixed[]" variable="$options">
+            <type by_reference="false">mixed[]</type>
+          </tag>
+          <tag line="1094" name="api" description="CMIS-ObjectServices"/>
+          <tag line="1094" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="1101">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1101">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1108" package="Default">
+        <name>getPropertiesOfLatestVersion</name>
+        <full_name>getPropertiesOfLatestVersion</full_name>
+        <argument line="1108">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1108">
+          <name>$major</name>
+          <default>false</default>
+          <type/>
+        </argument>
+        <argument line="1108">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1112" package="Default">
+        <name>getObjectOfLatestVersion</name>
+        <full_name>getObjectOfLatestVersion</full_name>
+        <argument line="1112">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1112">
+          <name>$major</name>
+          <default>false</default>
+          <type/>
+        </argument>
+        <argument line="1112">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1122" package="Default">
+        <name>getAllVersions</name>
+        <full_name>getAllVersions</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1134" package="Default">
+        <name>checkOut</name>
+        <full_name>checkOut</full_name>
+        <docblock line="1126">
+          <description>Checkout</description>
+          <long-description></long-description>
+          <tag line="1126" name="param" description="Object ID" type="String" variable="$objectId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="1126" name="param" description="Options" type="mixed[]" variable="$options">
+            <type by_reference="false">mixed[]</type>
+          </tag>
+          <tag line="1126" name="return" description="The working copy" type="Object">
+            <type by_reference="false">Object</type>
+          </tag>
+          <tag line="1126" name="api" description="CMIS-VersionServices"/>
+          <tag line="1126" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="1134">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1134">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1151" package="Default">
+        <name>checkIn</name>
+        <full_name>checkIn</full_name>
+        <docblock line="1143">
+          <description>Checkin</description>
+          <long-description></long-description>
+          <tag line="1143" name="param" description="Object ID" type="String" variable="$objectId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="1143" name="param" description="Options" type="mixed[]" variable="$options">
+            <type by_reference="false">mixed[]</type>
+          </tag>
+          <tag line="1143" name="return" description="The checked in object" type="Object">
+            <type by_reference="false">Object</type>
+          </tag>
+          <tag line="1143" name="api" description="CMIS-VersionServices"/>
+          <tag line="1143" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="1151">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1151">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1167" package="Default">
+        <name>cancelCheckOut</name>
+        <full_name>cancelCheckOut</full_name>
+        <docblock line="1160">
+          <description>Cancel Checkout</description>
+          <long-description></long-description>
+          <tag line="1160" name="param" description="Object ID" type="String" variable="$objectId">
+            <type by_reference="false">String</type>
+          </tag>
+          <tag line="1160" name="param" description="Options" type="mixed[]" variable="$options">
+            <type by_reference="false">mixed[]</type>
+          </tag>
+          <tag line="1160" name="api" description="CMIS-VersionServices"/>
+          <tag line="1160" name="since" description="CMIS-1.0"/>
+        </docblock>
+        <argument line="1167">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1167">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1181" package="Default">
+        <name>deleteAllVersions</name>
+        <full_name>deleteAllVersions</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1186" package="Default">
+        <name>getObjectRelationships</name>
+        <full_name>getObjectRelationships</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1193" package="Default">
+        <name>addObjectToFolder</name>
+        <full_name>addObjectToFolder</full_name>
+        <argument line="1193">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1193">
+          <name>$targetFolderId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1193">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1199" package="Default">
+        <name>removeObjectFromFolder</name>
+        <full_name>removeObjectFromFolder</full_name>
+        <argument line="1199">
+          <name>$objectId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1199">
+          <name>$targetFolderId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="1199">
+          <name>$options</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1210" package="Default">
+        <name>getAppliedPolicies</name>
+        <full_name>getAppliedPolicies</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1214" package="Default">
+        <name>applyPolicy</name>
+        <full_name>applyPolicy</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1218" package="Default">
+        <name>removePolicy</name>
+        <full_name>removePolicy</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1223" package="Default">
+        <name>getACL</name>
+        <full_name>getACL</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="1227" package="Default">
+        <name>applyACL</name>
+        <full_name>applyACL</full_name>
+      </method>
+    </class>
+    <markers>
+      <todo line="197">Fix Type Caching with missing properties</todo>
+      <todo line="259">Need to fix this for multiple repositories</todo>
+      <todo line="291">Refactor Type Entries Caching</todo>
+      <todo line="318">Refactor Type Entries Caching</todo>
+      <todo line="322">Need GenURLQueryString Utility</todo>
+      <todo line="324">Need right URL</todo>
+      <todo line="459">Need GenURLQueryString Utility</todo>
+      <todo line="476">Need GenURLQueryString Utility</todo>
+      <todo line="493">Need GenURLQueryString Utility</todo>
+      <todo line="838">Need Proper Query String Handling</todo>
+      <todo line="893">Need Proper Query String Handling</todo>
+      <todo line="916">Fix Hack HERE -- get type if it is there otherwise retrieve it --</todo>
+      <todo line="1168">Look at links "via" and "working-copy"</todo>
+    </markers>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file cmis/cmis_service.php</error>
+      <critical line="94" code="50019">No short description for property $_link_cache</critical>
+      <critical line="99" code="50019">No short description for property $_title_cache</critical>
+      <critical line="104" code="50019">No short description for property $_objTypeId_cache</critical>
+      <critical line="109" code="50019">No short description for property $_type_cache</critical>
+      <critical line="114" code="50019">No short description for property $_changeToken_cache</critical>
+      <error line="142" code="50012">No short description for method cacheObjectInfo()</error>
+      <error line="142" code="50015">Argument $obj is missing from the Docblock of cacheObjectInfo()</error>
+      <error line="175" code="50012">No short description for method cacheFeedInfo()</error>
+      <error line="175" code="50015">Argument $objs is missing from the Docblock of cacheFeedInfo()</error>
+      <error line="184" code="50012">No short description for method cacheTypeFeedInfo()</error>
+      <error line="184" code="50015">Argument $typs is missing from the Docblock of cacheTypeFeedInfo()</error>
+      <error line="193" code="50012">No short description for method cacheTypeInfo()</error>
+      <error line="193" code="50015">Argument $tDef is missing from the Docblock of cacheTypeInfo()</error>
+      <error line="201" code="50012">No short description for method getPropertyType()</error>
+      <error line="201" code="50015">Argument $typeId is missing from the Docblock of getPropertyType()</error>
+      <error line="201" code="50015">Argument $propertyId is missing from the Docblock of getPropertyType()</error>
+      <error line="214" code="50012">No short description for method getObjectType()</error>
+      <error line="214" code="50015">Argument $objectId is missing from the Docblock of getObjectType()</error>
+      <error line="225" code="50012">No short description for method getTitle()</error>
+      <error line="225" code="50015">Argument $objectId is missing from the Docblock of getTitle()</error>
+      <error line="236" code="50012">No short description for method getTypeLink()</error>
+      <error line="236" code="50015">Argument $typeId is missing from the Docblock of getTypeLink()</error>
+      <error line="236" code="50015">Argument $linkName is missing from the Docblock of getTypeLink()</error>
+      <error line="247" code="50012">No short description for method getLink()</error>
+      <error line="247" code="50015">Argument $objectId is missing from the Docblock of getLink()</error>
+      <error line="247" code="50015">Argument $linkName is missing from the Docblock of getLink()</error>
+      <error line="279" code="50015">Argument $options is missing from the Docblock of getTypeDescendants()</error>
+      <error line="307" code="50015">Argument $options is missing from the Docblock of getTypeChildren()</error>
+      <error line="333" code="50015">Argument $options is missing from the Docblock of getTypeDefinition()</error>
+      <error line="409" code="50015">Argument $options is missing from the Docblock of getFolderTree()</error>
+      <error line="429" code="50015">Argument $options is missing from the Docblock of getDescendants()</error>
+      <error line="449" code="50015">Argument $options is missing from the Docblock of getChildren()</error>
+      <error line="466" code="50015">Argument $options is missing from the Docblock of getFolderParent()</error>
+      <error line="483" code="50015">Argument $options is missing from the Docblock of getObjectParents()</error>
+      <error line="500" code="50015">Argument $options is missing from the Docblock of getCheckedOutDocs()</error>
+      <error line="516" code="50012">No short description for method getQueryTemplate()</error>
+      <error line="564" code="50012">No short description for method checkURL()</error>
+      <error line="564" code="50015">Argument $url is missing from the Docblock of checkURL()</error>
+      <error line="564" code="50015">Argument $functionName is missing from the Docblock of checkURL()</error>
+      <error line="590" code="50012">No short description for method getEntryTemplate()</error>
+      <error line="614" code="50012">No short description for method getPropertyTemplate()</error>
+      <error line="630" code="50012">No short description for method processPropertyTemplates()</error>
+      <error line="630" code="50015">Argument $objectType is missing from the Docblock of processPropertyTemplates()</error>
+      <error line="630" code="50015">Argument $propMap is missing from the Docblock of processPropertyTemplates()</error>
+      <error line="680" code="50012">No short description for method getContentEntry()</error>
+      <error line="680" code="50015">Argument $content is missing from the Docblock of getContentEntry()</error>
+      <error line="680" code="50015">Argument $content_type is missing from the Docblock of getContentEntry()</error>
+      <error line="698" code="50012">No short description for method getSummaryTemplate()</error>
+      <error line="711" code="50012">No short description for method getContentTemplate()</error>
+      <error line="730" code="50012">No short description for method createAtomEntry()</error>
+      <error line="730" code="50015">Argument $name is missing from the Docblock of createAtomEntry()</error>
+      <error line="730" code="50015">Argument $properties is missing from the Docblock of createAtomEntry()</error>
+      <error line="832" code="50012">No short description for method legacyPostObject()</error>
+      <error line="832" code="50015">Argument $folderId is missing from the Docblock of legacyPostObject()</error>
+      <error line="832" code="50015">Argument $objectName is missing from the Docblock of legacyPostObject()</error>
+      <error line="832" code="50015">Argument $objectType is missing from the Docblock of legacyPostObject()</error>
+      <error line="832" code="50015">Argument $properties is missing from the Docblock of legacyPostObject()</error>
+      <error line="832" code="50015">Argument $content is missing from the Docblock of legacyPostObject()</error>
+      <error line="832" code="50015">Argument $content_type is missing from the Docblock of legacyPostObject()</error>
+      <error line="832" code="50015">Argument $options is missing from the Docblock of legacyPostObject()</error>
+      <error line="888" code="50012">No short description for method postObject()</error>
+      <error line="888" code="50015">Argument $folderId is missing from the Docblock of postObject()</error>
+      <error line="888" code="50015">Argument $objectName is missing from the Docblock of postObject()</error>
+      <error line="888" code="50015">Argument $objectType is missing from the Docblock of postObject()</error>
+      <error line="888" code="50015">Argument $properties is missing from the Docblock of postObject()</error>
+      <error line="888" code="50015">Argument $content is missing from the Docblock of postObject()</error>
+      <error line="888" code="50015">Argument $content_type is missing from the Docblock of postObject()</error>
+      <error line="888" code="50015">Argument $options is missing from the Docblock of postObject()</error>
+      <error line="912" code="50012">No short description for method postEntry()</error>
+      <error line="912" code="50015">Argument $url is missing from the Docblock of postEntry()</error>
+      <error line="912" code="50015">Argument $properties is missing from the Docblock of postEntry()</error>
+      <error line="912" code="50015">Argument $content is missing from the Docblock of postEntry()</error>
+      <error line="912" code="50015">Argument $content_type is missing from the Docblock of postEntry()</error>
+      <error line="912" code="50015">Argument $options is missing from the Docblock of postEntry()</error>
+      <error line="952" code="50010">No DocBlock was found for method createDocument()</error>
+      <error line="956" code="50010">No DocBlock was found for method createDocumentFromSource()</error>
+      <error line="960" code="50010">No DocBlock was found for method createFolder()</error>
+      <error line="964" code="50010">No DocBlock was found for method createRelationship()</error>
+      <error line="968" code="50010">No DocBlock was found for method createPolicy()</error>
+      <error line="972" code="50010">No DocBlock was found for method createItem()</error>
+      <error line="976" code="50010">No DocBlock was found for method updateProperties()</error>
+      <error line="1019" code="50010">No DocBlock was found for method bulkUpdateProperties()</error>
+      <error line="1023" code="50010">No DocBlock was found for method moveObject()</error>
+      <error line="1108" code="50010">No DocBlock was found for method getPropertiesOfLatestVersion()</error>
+      <error line="1112" code="50010">No DocBlock was found for method getObjectOfLatestVersion()</error>
+      <error line="1122" code="50010">No DocBlock was found for method getAllVersions()</error>
+      <error line="1181" code="50010">No DocBlock was found for method deleteAllVersions()</error>
+      <error line="1186" code="50010">No DocBlock was found for method getObjectRelationships()</error>
+      <error line="1193" code="50010">No DocBlock was found for method addObjectToFolder()</error>
+      <error line="1199" code="50010">No DocBlock was found for method removeObjectFromFolder()</error>
+      <error line="1210" code="50010">No DocBlock was found for method getAppliedPolicies()</error>
+      <error line="1214" code="50010">No DocBlock was found for method applyPolicy()</error>
+      <error line="1218" code="50010">No DocBlock was found for method removePolicy()</error>
+      <error line="1223" code="50010">No DocBlock was found for method getACL()</error>
+      <error line="1227" code="50010">No DocBlock was found for method applyACL()</error>
+    </parse_markers>
+  </file>
+  <file path="cmis-lib.php" hash="a55e054af720ff271464e11bed61e876" package="Default">
+    <include line="18" type="Require Once" package="Default">
+      <name>cmis/cmis_service.php</name>
+    </include>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file cmis-lib.php</error>
+    </parse_markers>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <namespace name="global" full_name="global"/>
+  <marker count="20">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>

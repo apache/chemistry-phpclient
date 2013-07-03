@@ -42,6 +42,9 @@ FUNCTIONALITY
  More information will be on the Wiki for this Google Code Project and on
  the author's blog http://oldschooltechie.com/
 
+DOCS
+The docs were built with the following command
+phpdoc -t docs/atom -d  atom
 
 ==============
 Adding Calls that mimick the domain model

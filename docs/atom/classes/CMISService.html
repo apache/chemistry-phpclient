@@ -1,0 +1,1429 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \CMISService</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">200</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">20</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list"><li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Construct a new CMISService Connector"><span class="description">Construct a new CMISService Connector</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_addObjectToFolder" title="addObjectToFolder :: "><span class="description">addObjectToFolder()
+        </span><pre>addObjectToFolder()</pre></a></li>
+<li class="method public "><a href="#method_appendContentStream" title="appendContentStream :: Append Content to an Objects Content Stream"><span class="description">Append Content to an Objects Content Stream</span><pre>appendContentStream()</pre></a></li>
+<li class="method public "><a href="#method_applyACL" title="applyACL :: "><span class="description">applyACL()
+        </span><pre>applyACL()</pre></a></li>
+<li class="method public "><a href="#method_applyPolicy" title="applyPolicy :: "><span class="description">applyPolicy()
+        </span><pre>applyPolicy()</pre></a></li>
+<li class="method public "><a href="#method_bulkUpdateProperties" title="bulkUpdateProperties :: "><span class="description">bulkUpdateProperties()
+        </span><pre>bulkUpdateProperties()</pre></a></li>
+<li class="method public "><a href="#method_cancelCheckOut" title="cancelCheckOut :: Cancel Checkout"><span class="description">Cancel Checkout</span><pre>cancelCheckOut()</pre></a></li>
+<li class="method public "><a href="#method_checkIn" title="checkIn :: Checkin"><span class="description">Checkin</span><pre>checkIn()</pre></a></li>
+<li class="method public "><a href="#method_checkOut" title="checkOut :: Checkout"><span class="description">Checkout</span><pre>checkOut()</pre></a></li>
+<li class="method public "><a href="#method_createDocument" title="createDocument :: "><span class="description">createDocument()
+        </span><pre>createDocument()</pre></a></li>
+<li class="method public "><a href="#method_createDocumentFromSource" title="createDocumentFromSource :: "><span class="description">createDocumentFromSource()
+        </span><pre>createDocumentFromSource()</pre></a></li>
+<li class="method public "><a href="#method_createFolder" title="createFolder :: "><span class="description">createFolder()
+        </span><pre>createFolder()</pre></a></li>
+<li class="method public "><a href="#method_createItem" title="createItem :: "><span class="description">createItem()
+        </span><pre>createItem()</pre></a></li>
+<li class="method public "><a href="#method_createPolicy" title="createPolicy :: "><span class="description">createPolicy()
+        </span><pre>createPolicy()</pre></a></li>
+<li class="method public "><a href="#method_createRelationship" title="createRelationship :: "><span class="description">createRelationship()
+        </span><pre>createRelationship()</pre></a></li>
+<li class="method public "><a href="#method_createType" title="createType :: Creates a new type definition."><span class="description">Creates a new type definition.</span><pre>createType()</pre></a></li>
+<li class="method public "><a href="#method_deleteAllVersions" title="deleteAllVersions :: "><span class="description">deleteAllVersions()
+        </span><pre>deleteAllVersions()</pre></a></li>
+<li class="method public "><a href="#method_deleteContentStream" title="deleteContentStream :: Delete an Objects Content Stream"><span class="description">Delete an Objects Content Stream</span><pre>deleteContentStream()</pre></a></li>
+<li class="method public "><a href="#method_deleteObject" title="deleteObject :: Delete an Object"><span class="description">Delete an Object</span><pre>deleteObject()</pre></a></li>
+<li class="method public "><a href="#method_deleteTree" title="deleteTree :: Delete an Object Tree"><span class="description">Delete an Object Tree</span><pre>deleteTree()</pre></a></li>
+<li class="method public "><a href="#method_deleteType" title="deleteType :: Deletes a type definition"><span class="description">Deletes a type definition</span><pre>deleteType()</pre></a></li>
+<li class="method public "><a href="#method_getACL" title="getACL :: "><span class="description">getACL()
+        </span><pre>getACL()</pre></a></li>
+<li class="method public "><a href="#method_getAllVersions" title="getAllVersions :: "><span class="description">getAllVersions()
+        </span><pre>getAllVersions()</pre></a></li>
+<li class="method public "><a href="#method_getAllowableActions" title="getAllowableActions :: Get an Object's Allowable Actions"><span class="description">Get an Object's Allowable Actions</span><pre>getAllowableActions()</pre></a></li>
+<li class="method public "><a href="#method_getAppliedPolicies" title="getAppliedPolicies :: "><span class="description">getAppliedPolicies()
+        </span><pre>getAppliedPolicies()</pre></a></li>
+<li class="method public "><a href="#method_getCheckedOutDocs" title="getCheckedOutDocs :: Get the list of documents that are checked out that the user has access to."><span class="description">Get the list of documents that are checked out that the user has access to.</span><pre>getCheckedOutDocs()</pre></a></li>
+<li class="method public "><a href="#method_getChildren" title="getChildren :: Get the list of child objects contained in the specified folder."><span class="description">Get the list of child objects contained in the specified folder.</span><pre>getChildren()</pre></a></li>
+<li class="method public "><a href="#method_getContentChanges" title="getContentChanges :: Get Content Changes"><span class="description">Get Content Changes</span><pre>getContentChanges()</pre></a></li>
+<li class="method public "><a href="#method_getContentStream" title="getContentStream :: Get an Object's Allowable Actions"><span class="description">Get an Object's Allowable Actions</span><pre>getContentStream()</pre></a></li>
+<li class="method public "><a href="#method_getDescendants" title="getDescendants :: Get the list of descendant objects contained in the specified folder."><span class="description">Get the list of descendant objects contained in the specified folder.</span><pre>getDescendants()</pre></a></li>
+<li class="method public "><a href="#method_getFolderParent" title="getFolderParent :: Get the parent folder of the specified folder."><span class="description">Get the parent folder of the specified folder.</span><pre>getFolderParent()</pre></a></li>
+<li class="method public "><a href="#method_getFolderTree" title="getFolderTree :: Get the list of descendant folders contained in the specified folder."><span class="description">Get the list of descendant folders contained in the specified folder.</span><pre>getFolderTree()</pre></a></li>
+<li class="method public inherited"><a href="#method_getLastRequest" title="getLastRequest :: "><span class="description">getLastRequest()
+        </span><pre>getLastRequest()</pre></a></li>
+<li class="method public inherited"><a href="#method_getLastRequestBody" title="getLastRequestBody :: "><span class="description">getLastRequestBody()
+        </span><pre>getLastRequestBody()</pre></a></li>
+<li class="method public inherited"><a href="#method_getLastRequestCode" title="getLastRequestCode :: "><span class="description">getLastRequestCode()
+        </span><pre>getLastRequestCode()</pre></a></li>
+<li class="method public inherited"><a href="#method_getLastRequestContentLength" title="getLastRequestContentLength :: "><span class="description">getLastRequestContentLength()
+        </span><pre>getLastRequestContentLength()</pre></a></li>
+<li class="method public inherited"><a href="#method_getLastRequestContentSent" title="getLastRequestContentSent :: "><span class="description">getLastRequestContentSent()
+        </span><pre>getLastRequestContentSent()</pre></a></li>
+<li class="method public inherited"><a href="#method_getLastRequestContentType" title="getLastRequestContentType :: "><span class="description">getLastRequestContentType()
+        </span><pre>getLastRequestContentType()</pre></a></li>
+<li class="method public inherited"><a href="#method_getLastRequestContentTypeSent" title="getLastRequestContentTypeSent :: "><span class="description">getLastRequestContentTypeSent()
+        </span><pre>getLastRequestContentTypeSent()</pre></a></li>
+<li class="method public inherited"><a href="#method_getLastRequestMethod" title="getLastRequestMethod :: "><span class="description">getLastRequestMethod()
+        </span><pre>getLastRequestMethod()</pre></a></li>
+<li class="method public inherited"><a href="#method_getLastRequestURL" title="getLastRequestURL :: "><span class="description">getLastRequestURL()
+        </span><pre>getLastRequestURL()</pre></a></li>
+<li class="method public "><a href="#method_getMultiValuedProp" title="getMultiValuedProp :: Get an Object's property and return it as an array"><span class="description">Get an Object's property and return it as an array</span><pre>getMultiValuedProp()</pre></a></li>
+<li class="method public "><a href="#method_getObject" title="getObject :: Get an Object by Object Id"><span class="description">Get an Object by Object Id</span><pre>getObject()</pre></a></li>
+<li class="method public "><a href="#method_getObjectByPath" title="getObjectByPath :: Get an Object by its Path"><span class="description">Get an Object by its Path</span><pre>getObjectByPath()</pre></a></li>
+<li class="method public "><a href="#method_getObjectOfLatestVersion" title="getObjectOfLatestVersion :: "><span class="description">getObjectOfLatestVersion()
+        </span><pre>getObjectOfLatestVersion()</pre></a></li>
+<li class="method public "><a href="#method_getObjectParents" title="getObjectParents :: Get the parent folder(s) for the specified fileable object."><span class="description">Get the parent folder(s) for the specified fileable object.</span><pre>getObjectParents()</pre></a></li>
+<li class="method public "><a href="#method_getObjectRelationships" title="getObjectRelationships :: "><span class="description">getObjectRelationships()
+        </span><pre>getObjectRelationships()</pre></a></li>
+<li class="method public "><a href="#method_getObjectTypeDefinition" title="getObjectTypeDefinition :: Get an Object's Property Type by Object Id"><span class="description">Get an Object's Property Type by Object Id</span><pre>getObjectTypeDefinition()</pre></a></li>
+<li class="method public "><a href="#method_getProperties" title="getProperties :: Get an Object's Properties by Object Id"><span class="description">Get an Object's Properties by Object Id</span><pre>getProperties()</pre></a></li>
+<li class="method public "><a href="#method_getPropertiesOfLatestVersion" title="getPropertiesOfLatestVersion :: "><span class="description">getPropertiesOfLatestVersion()
+        </span><pre>getPropertiesOfLatestVersion()</pre></a></li>
+<li class="method public "><a href="#method_getRenditions" title="getRenditions :: Get the list of associated renditions for the specified object"><span class="description">Get the list of associated renditions for the specified object</span><pre>getRenditions()</pre></a></li>
+<li class="method public "><a href="#method_getRepositories" title="getRepositories :: Get an Object by Object Id"><span class="description">Get an Object by Object Id</span><pre>getRepositories()</pre></a></li>
+<li class="method public "><a href="#method_getRepositoryInfo" title="getRepositoryInfo :: Get Repository Information"><span class="description">Get Repository Information</span><pre>getRepositoryInfo()</pre></a></li>
+<li class="method public "><a href="#method_getTypeChildren" title="getTypeChildren :: Get a list of object-types that are children of the specified type"><span class="description">Get a list of object-types that are children of the specified type</span><pre>getTypeChildren()</pre></a></li>
+<li class="method public "><a href="#method_getTypeDefinition" title="getTypeDefinition :: Gets the definition of the specified object-type."><span class="description">Gets the definition of the specified object-type.</span><pre>getTypeDefinition()</pre></a></li>
+<li class="method public "><a href="#method_getTypeDescendants" title="getTypeDescendants :: Get a set of object-types that are descendants of the specified type"><span class="description">Get a set of object-types that are descendants of the specified type</span><pre>getTypeDescendants()</pre></a></li>
+<li class="method public "><a href="#method_moveObject" title="moveObject :: "><span class="description">moveObject()
+        </span><pre>moveObject()</pre></a></li>
+<li class="method public "><a href="#method_query" title="query :: Execute a CMIS Query"><span class="description">Execute a CMIS Query</span><pre>query()</pre></a></li>
+<li class="method public "><a href="#method_removeObjectFromFolder" title="removeObjectFromFolder :: "><span class="description">removeObjectFromFolder()
+        </span><pre>removeObjectFromFolder()</pre></a></li>
+<li class="method public "><a href="#method_removePolicy" title="removePolicy :: "><span class="description">removePolicy()
+        </span><pre>removePolicy()</pre></a></li>
+<li class="method public "><a href="#method_setContentStream" title="setContentStream :: Set an Objects Content Stream"><span class="description">Set an Objects Content Stream</span><pre>setContentStream()</pre></a></li>
+<li class="method public "><a href="#method_updateProperties" title="updateProperties :: "><span class="description">updateProperties()
+        </span><pre>updateProperties()</pre></a></li>
+<li class="method public "><a href="#method_updateType" title="updateType :: Updates a type definition"><span class="description">Updates a type definition</span><pre>updateType()</pre></a></li>
+</ul>
+</li></ul>
+</div>
+<div class="span8">
+<a id="\CMISService"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/CMISService.html">CMISService</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">CMIS Service</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>api</th>
+<td>CMIS</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Construct a new CMISService Connector</h2>
+<pre>__construct(String $url, String $username, String $password, mixed[] $options, array $addlCurlOptions) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>api</th>
+<td>CMIS-Service</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>String</code><p>Endpoint URL</p></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>String</code><p>Username</p></div>
+<div class="subelement argument">
+<h4>$password</h4>
+<code>String</code><p>Password</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>mixed[]</code><p>Connection Options</p></div>
+<div class="subelement argument">
+<h4>$addlCurlOptions</h4>
+<code>mixed[]</code><p>Additional CURL Options</p></div>
+</div></div>
+</div>
+<a id="method_addObjectToFolder"></a><div class="element clickable method public method_addObjectToFolder" data-toggle="collapse" data-target=".method_addObjectToFolder .collapse">
+<h2>addObjectToFolder()
+        </h2>
+<pre>addObjectToFolder($objectId, $targetFolderId, $options) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$objectId</h4></div>
+<div class="subelement argument"><h4>$targetFolderId</h4></div>
+<div class="subelement argument"><h4>$options</h4></div>
+</div></div>
+</div>
+<a id="method_appendContentStream"></a><div class="element clickable method public method_appendContentStream" data-toggle="collapse" data-target=".method_appendContentStream .collapse">
+<h2>Append Content to an Objects Content Stream</h2>
+<pre>appendContentStream(String $objectId, String $content, String $content_type, mixed[] $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-ObjectServices-NotImplemented</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$objectId</h4>
+<code>String</code><p>Object ID</p></div>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>String</code><p>Content to be appended</p></div>
+<div class="subelement argument">
+<h4>$content_type</h4>
+<code>String</code><p>Content Mime Type</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>mixed[]</code><p>Options</p></div>
+</div></div>
+</div>
+<a id="method_applyACL"></a><div class="element clickable method public method_applyACL" data-toggle="collapse" data-target=".method_applyACL .collapse">
+<h2>applyACL()
+        </h2>
+<pre>applyACL() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_applyPolicy"></a><div class="element clickable method public method_applyPolicy" data-toggle="collapse" data-target=".method_applyPolicy .collapse">
+<h2>applyPolicy()
+        </h2>
+<pre>applyPolicy() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_bulkUpdateProperties"></a><div class="element clickable method public method_bulkUpdateProperties" data-toggle="collapse" data-target=".method_bulkUpdateProperties .collapse">
+<h2>bulkUpdateProperties()
+        </h2>
+<pre>bulkUpdateProperties() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_cancelCheckOut"></a><div class="element clickable method public method_cancelCheckOut" data-toggle="collapse" data-target=".method_cancelCheckOut .collapse">
+<h2>Cancel Checkout</h2>
+<pre>cancelCheckOut(String $objectId, mixed[] $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>api</th>
+<td>CMIS-VersionServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$objectId</h4>
+<code>String</code><p>Object ID</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>mixed[]</code><p>Options</p></div>
+</div></div>
+</div>
+<a id="method_checkIn"></a><div class="element clickable method public method_checkIn" data-toggle="collapse" data-target=".method_checkIn .collapse">
+<h2>Checkin</h2>
+<pre>checkIn(String $objectId, mixed[] $options) : Object</pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>api</th>
+<td>CMIS-VersionServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$objectId</h4>
+<code>String</code><p>Object ID</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>mixed[]</code><p>Options</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Object</code>The checked in object</div>
+</div></div>
+</div>
+<a id="method_checkOut"></a><div class="element clickable method public method_checkOut" data-toggle="collapse" data-target=".method_checkOut .collapse">
+<h2>Checkout</h2>
+<pre>checkOut(String $objectId, mixed[] $options) : Object</pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>api</th>
+<td>CMIS-VersionServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$objectId</h4>
+<code>String</code><p>Object ID</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>mixed[]</code><p>Options</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Object</code>The working copy</div>
+</div></div>
+</div>
+<a id="method_createDocument"></a><div class="element clickable method public method_createDocument" data-toggle="collapse" data-target=".method_createDocument .collapse">
+<h2>createDocument()
+        </h2>
+<pre>createDocument($folderId, $fileName, $properties, $content, $content_type, $options) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$folderId</h4></div>
+<div class="subelement argument"><h4>$fileName</h4></div>
+<div class="subelement argument"><h4>$properties</h4></div>
+<div class="subelement argument"><h4>$content</h4></div>
+<div class="subelement argument"><h4>$content_type</h4></div>
+<div class="subelement argument"><h4>$options</h4></div>
+</div></div>
+</div>
+<a id="method_createDocumentFromSource"></a><div class="element clickable method public method_createDocumentFromSource" data-toggle="collapse" data-target=".method_createDocumentFromSource .collapse">
+<h2>createDocumentFromSource()
+        </h2>
+<pre>createDocumentFromSource() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_createFolder"></a><div class="element clickable method public method_createFolder" data-toggle="collapse" data-target=".method_createFolder .collapse">
+<h2>createFolder()
+        </h2>
+<pre>createFolder($folderId, $folderName, $properties, $options) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$folderId</h4></div>
+<div class="subelement argument"><h4>$folderName</h4></div>
+<div class="subelement argument"><h4>$properties</h4></div>
+<div class="subelement argument"><h4>$options</h4></div>
+</div></div>
+</div>
+<a id="method_createItem"></a><div class="element clickable method public method_createItem" data-toggle="collapse" data-target=".method_createItem .collapse">
+<h2>createItem()
+        </h2>
+<pre>createItem() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_createPolicy"></a><div class="element clickable method public method_createPolicy" data-toggle="collapse" data-target=".method_createPolicy .collapse">
+<h2>createPolicy()
+        </h2>
+<pre>createPolicy() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_createRelationship"></a><div class="element clickable method public method_createRelationship" data-toggle="collapse" data-target=".method_createRelationship .collapse">
+<h2>createRelationship()
+        </h2>
+<pre>createRelationship() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_createType"></a><div class="element clickable method public method_createType" data-toggle="collapse" data-target=".method_createType .collapse">
+<h2>Creates a new type definition.</h2>
+<pre>createType(String $objectType) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Creates a new type definition that is a subtype of an existing specified parent type.
+Only properties that are new to this type (not inherited) are passed to this service.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object Type Definition of the Specified Object</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-RepositoryServices-NotImplemented</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.1</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$objectType</h4>
+<code>String</code><p>A type definition object with the property definitions that are to change.</p></div>
+</div></div>
+</div>
+<a id="method_deleteAllVersions"></a><div class="element clickable method public method_deleteAllVersions" data-toggle="collapse" data-target=".method_deleteAllVersions .collapse">
+<h2>deleteAllVersions()
+        </h2>
+<pre>deleteAllVersions() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_deleteContentStream"></a><div class="element clickable method public method_deleteContentStream" data-toggle="collapse" data-target=".method_deleteContentStream .collapse">
+<h2>Delete an Objects Content Stream</h2>
+<pre>deleteContentStream(String $objectId, mixed[] $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>api</th>
+<td>CMIS-ObjectServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$objectId</h4>
+<code>String</code><p>Object ID</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>mixed[]</code><p>Options</p></div>
+</div></div>
+</div>
+<a id="method_deleteObject"></a><div class="element clickable method public method_deleteObject" data-toggle="collapse" data-target=".method_deleteObject .collapse">
+<h2>Delete an Object</h2>
+<pre>deleteObject(String $objectId, mixed[] $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>api</th>
+<td>CMIS-ObjectServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$objectId</h4>
+<code>String</code><p>Object ID</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>mixed[]</code><p>Options</p></div>
+</div></div>
+</div>
+<a id="method_deleteTree"></a><div class="element clickable method public method_deleteTree" data-toggle="collapse" data-target=".method_deleteTree .collapse">
+<h2>Delete an Object Tree</h2>
+<pre>deleteTree(String $folderId, mixed[] $options) : Object[]</pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>api</th>
+<td>CMIS-ObjectServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$folderId</h4>
+<code>String</code><p>Folder Object ID</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>mixed[]</code><p>Options</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>Object[]</code>Array of problem objects</div>
+</div></div>
+</div>
+<a id="method_deleteType"></a><div class="element clickable method public method_deleteType" data-toggle="collapse" data-target=".method_deleteType .collapse">
+<h2>Deletes a type definition</h2>
+<pre>deleteType(String $typeId) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If there are object instances present of the type being deleted then this operation MUST fail.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>api</th>
+<td>CMIS-RepositoryServices-NotImplemented</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.1</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$typeId</h4>
+<code>String</code><p>The typeId of an object-type specified in the repository.</p>
+</div>
+</div></div>
+</div>
+<a id="method_getACL"></a><div class="element clickable method public method_getACL" data-toggle="collapse" data-target=".method_getACL .collapse">
+<h2>getACL()
+        </h2>
+<pre>getACL() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getAllVersions"></a><div class="element clickable method public method_getAllVersions" data-toggle="collapse" data-target=".method_getAllVersions .collapse">
+<h2>getAllVersions()
+        </h2>
+<pre>getAllVersions() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getAllowableActions"></a><div class="element clickable method public method_getAllowableActions" data-toggle="collapse" data-target=".method_getAllowableActions .collapse">
+<h2>Get an Object's Allowable Actions</h2>
+<pre>getAllowableActions(String $objectId, mixed[] $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>mixed[]</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-ObjectServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$objectId</h4>
+<code>String</code><p>Object Id</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>mixed[]</code><p>Options</p></div>
+</div></div>
+</div>
+<a id="method_getAppliedPolicies"></a><div class="element clickable method public method_getAppliedPolicies" data-toggle="collapse" data-target=".method_getAppliedPolicies .collapse">
+<h2>getAppliedPolicies()
+        </h2>
+<pre>getAppliedPolicies() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getCheckedOutDocs"></a><div class="element clickable method public method_getCheckedOutDocs" data-toggle="collapse" data-target=".method_getCheckedOutDocs .collapse">
+<h2>Get the list of documents that are checked out that the user has access to.</h2>
+<pre>getCheckedOutDocs($options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object[] list of checked out documents.</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-NavigationServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$options</h4></div>
+</div></div>
+</div>
+<a id="method_getChildren"></a><div class="element clickable method public method_getChildren" data-toggle="collapse" data-target=".method_getChildren .collapse">
+<h2>Get the list of child objects contained in the specified folder.</h2>
+<pre>getChildren(String $folderId, $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object[] A list of the child objects for the specified folder.</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-NavigationServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$folderId</h4>
+<code>String</code><p>the Object ID of the folder</p></div>
+<div class="subelement argument"><h4>$options</h4></div>
+</div></div>
+</div>
+<a id="method_getContentChanges"></a><div class="element clickable method public method_getContentChanges" data-toggle="collapse" data-target=".method_getContentChanges .collapse">
+<h2>Get Content Changes</h2>
+<pre>getContentChanges(mixed[] $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object[] List of Change Events</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-DiscoveryServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>mixed[]</code><p>Options</p></div>
+</div></div>
+</div>
+<a id="method_getContentStream"></a><div class="element clickable method public method_getContentStream" data-toggle="collapse" data-target=".method_getContentStream .collapse">
+<h2>Get an Object's Allowable Actions</h2>
+<pre>getContentStream(String $objectId, mixed[] $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>String</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-ObjectServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$objectId</h4>
+<code>String</code><p>Object Id</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>mixed[]</code><p>Options</p></div>
+</div></div>
+</div>
+<a id="method_getDescendants"></a><div class="element clickable method public method_getDescendants" data-toggle="collapse" data-target=".method_getDescendants .collapse">
+<h2>Get the list of descendant objects contained in the specified folder.</h2>
+<pre>getDescendants(String $folderId, String $depth, $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object[] A tree of the child objects for the specified folder.</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-NavigationServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$folderId</h4>
+<code>String</code><p>the Object ID of the folder</p></div>
+<div class="subelement argument">
+<h4>$depth</h4>
+<code>String</code><p>The number of levels of depth in the folder hierarchy from which to return results (-1 == ALL).</p>
+</div>
+<div class="subelement argument"><h4>$options</h4></div>
+</div></div>
+</div>
+<a id="method_getFolderParent"></a><div class="element clickable method public method_getFolderParent" data-toggle="collapse" data-target=".method_getFolderParent .collapse">
+<h2>Get the parent folder of the specified folder.</h2>
+<pre>getFolderParent(String $folderId, $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object the parent folder.</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-NavigationServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$folderId</h4>
+<code>String</code><p>the Object ID of the folder</p></div>
+<div class="subelement argument"><h4>$options</h4></div>
+</div></div>
+</div>
+<a id="method_getFolderTree"></a><div class="element clickable method public method_getFolderTree" data-toggle="collapse" data-target=".method_getFolderTree .collapse">
+<h2>Get the list of descendant folders contained in the specified folder.</h2>
+<pre>getFolderTree(String $folderId, String $depth, $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object[] A tree of the child objects for the specified folder.</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-NavigationServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$folderId</h4>
+<code>String</code><p>the Object ID of the folder</p></div>
+<div class="subelement argument">
+<h4>$depth</h4>
+<code>String</code><p>The number of levels of depth in the folder hierarchy from which to return results (-1 == ALL).</p>
+</div>
+<div class="subelement argument"><h4>$options</h4></div>
+</div></div>
+</div>
+<a id="method_getLastRequest"></a><div class="element clickable method public method_getLastRequest" data-toggle="collapse" data-target=".method_getLastRequest .collapse">
+<h2>getLastRequest()
+        </h2>
+<pre>getLastRequest() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CMISRepositoryWrapper::getLastRequest()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getLastRequestBody"></a><div class="element clickable method public method_getLastRequestBody" data-toggle="collapse" data-target=".method_getLastRequestBody .collapse">
+<h2>getLastRequestBody()
+        </h2>
+<pre>getLastRequestBody() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CMISRepositoryWrapper::getLastRequestBody()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getLastRequestCode"></a><div class="element clickable method public method_getLastRequestCode" data-toggle="collapse" data-target=".method_getLastRequestCode .collapse">
+<h2>getLastRequestCode()
+        </h2>
+<pre>getLastRequestCode() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CMISRepositoryWrapper::getLastRequestCode()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getLastRequestContentLength"></a><div class="element clickable method public method_getLastRequestContentLength" data-toggle="collapse" data-target=".method_getLastRequestContentLength .collapse">
+<h2>getLastRequestContentLength()
+        </h2>
+<pre>getLastRequestContentLength() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CMISRepositoryWrapper::getLastRequestContentLength()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getLastRequestContentSent"></a><div class="element clickable method public method_getLastRequestContentSent" data-toggle="collapse" data-target=".method_getLastRequestContentSent .collapse">
+<h2>getLastRequestContentSent()
+        </h2>
+<pre>getLastRequestContentSent() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CMISRepositoryWrapper::getLastRequestContentSent()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getLastRequestContentType"></a><div class="element clickable method public method_getLastRequestContentType" data-toggle="collapse" data-target=".method_getLastRequestContentType .collapse">
+<h2>getLastRequestContentType()
+        </h2>
+<pre>getLastRequestContentType() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CMISRepositoryWrapper::getLastRequestContentType()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getLastRequestContentTypeSent"></a><div class="element clickable method public method_getLastRequestContentTypeSent" data-toggle="collapse" data-target=".method_getLastRequestContentTypeSent .collapse">
+<h2>getLastRequestContentTypeSent()
+        </h2>
+<pre>getLastRequestContentTypeSent() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CMISRepositoryWrapper::getLastRequestContentTypeSent()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getLastRequestMethod"></a><div class="element clickable method public method_getLastRequestMethod" data-toggle="collapse" data-target=".method_getLastRequestMethod .collapse">
+<h2>getLastRequestMethod()
+        </h2>
+<pre>getLastRequestMethod() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CMISRepositoryWrapper::getLastRequestMethod()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getLastRequestURL"></a><div class="element clickable method public method_getLastRequestURL" data-toggle="collapse" data-target=".method_getLastRequestURL .collapse">
+<h2>getLastRequestURL()
+        </h2>
+<pre>getLastRequestURL() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CMISRepositoryWrapper::getLastRequestURL()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getMultiValuedProp"></a><div class="element clickable method public method_getMultiValuedProp" data-toggle="collapse" data-target=".method_getMultiValuedProp .collapse">
+<h2>Get an Object's property and return it as an array</h2>
+<pre>getMultiValuedProp(Object $obj, String $propName) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This returns an array even if it is a scalar or null</p></div>
+<table class="table table-bordered">
+<tr>
+<th>todo</th>
+<td>Allow the getProperty method to query the object type information and
+return multivalue properties as arrays even if empty or if only a single value
+is present.</td>
+</tr>
+<tr>
+<th>returns</th>
+<td>mixed[]</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-Helper</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$obj</h4>
+<code>Object</code><p>Object</p></div>
+<div class="subelement argument">
+<h4>$propName</h4>
+<code>String</code><p>Property Name</p></div>
+</div></div>
+</div>
+<a id="method_getObject"></a><div class="element clickable method public method_getObject" data-toggle="collapse" data-target=".method_getObject .collapse">
+<h2>Get an Object by Object Id</h2>
+<pre>getObject(String $objectId, mixed[] $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-ObjectServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$objectId</h4>
+<code>String</code><p>Object ID</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>mixed[]</code><p>Options</p></div>
+</div></div>
+</div>
+<a id="method_getObjectByPath"></a><div class="element clickable method public method_getObjectByPath" data-toggle="collapse" data-target=".method_getObjectByPath .collapse">
+<h2>Get an Object by its Path</h2>
+<pre>getObjectByPath(String $path, mixed[] $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-ObjectServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>String</code><p>Path To Object</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>mixed[]</code><p>Options</p></div>
+</div></div>
+</div>
+<a id="method_getObjectOfLatestVersion"></a><div class="element clickable method public method_getObjectOfLatestVersion" data-toggle="collapse" data-target=".method_getObjectOfLatestVersion .collapse">
+<h2>getObjectOfLatestVersion()
+        </h2>
+<pre>getObjectOfLatestVersion($objectId, $major, $options) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$objectId</h4></div>
+<div class="subelement argument"><h4>$major</h4></div>
+<div class="subelement argument"><h4>$options</h4></div>
+</div></div>
+</div>
+<a id="method_getObjectParents"></a><div class="element clickable method public method_getObjectParents" data-toggle="collapse" data-target=".method_getObjectParents .collapse">
+<h2>Get the parent folder(s) for the specified fileable object.</h2>
+<pre>getObjectParents(String $objectId, $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object[] list of the parent folder(s) of the specified object.</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-NavigationServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$objectId</h4>
+<code>String</code><p>the Object ID of the Object</p></div>
+<div class="subelement argument"><h4>$options</h4></div>
+</div></div>
+</div>
+<a id="method_getObjectRelationships"></a><div class="element clickable method public method_getObjectRelationships" data-toggle="collapse" data-target=".method_getObjectRelationships .collapse">
+<h2>getObjectRelationships()
+        </h2>
+<pre>getObjectRelationships() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getObjectTypeDefinition"></a><div class="element clickable method public method_getObjectTypeDefinition" data-toggle="collapse" data-target=".method_getObjectTypeDefinition .collapse">
+<h2>Get an Object's Property Type by Object Id</h2>
+<pre>getObjectTypeDefinition(String $objectId) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object Type Definition of the Specified Object</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-Helper</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$objectId</h4>
+<code>String</code><p>Object Id</p></div>
+</div></div>
+</div>
+<a id="method_getProperties"></a><div class="element clickable method public method_getProperties" data-toggle="collapse" data-target=".method_getProperties .collapse">
+<h2>Get an Object's Properties by Object Id</h2>
+<pre>getProperties(String $objectId, mixed[] $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-ObjectServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$objectId</h4>
+<code>String</code><p>Object Id</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>mixed[]</code><p>Options</p></div>
+</div></div>
+</div>
+<a id="method_getPropertiesOfLatestVersion"></a><div class="element clickable method public method_getPropertiesOfLatestVersion" data-toggle="collapse" data-target=".method_getPropertiesOfLatestVersion .collapse">
+<h2>getPropertiesOfLatestVersion()
+        </h2>
+<pre>getPropertiesOfLatestVersion($objectId, $major, $options) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$objectId</h4></div>
+<div class="subelement argument"><h4>$major</h4></div>
+<div class="subelement argument"><h4>$options</h4></div>
+</div></div>
+</div>
+<a id="method_getRenditions"></a><div class="element clickable method public method_getRenditions" data-toggle="collapse" data-target=".method_getRenditions .collapse">
+<h2>Get the list of associated renditions for the specified object</h2>
+<pre>getRenditions(String $objectId, mixed[] $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Only rendition attributes are returned, not rendition stream.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object[]</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-ObjectServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$objectId</h4>
+<code>String</code><p>Object Id</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>mixed[]</code><p>Options</p></div>
+</div></div>
+</div>
+<a id="method_getRepositories"></a><div class="element clickable method public method_getRepositories" data-toggle="collapse" data-target=".method_getRepositories .collapse">
+<h2>Get an Object by Object Id</h2>
+<pre>getRepositories() </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>api</th>
+<td>CMIS-RepositoryServices-NotImplemented</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_getRepositoryInfo"></a><div class="element clickable method public method_getRepositoryInfo" data-toggle="collapse" data-target=".method_getRepositoryInfo .collapse">
+<h2>Get Repository Information</h2>
+<pre>getRepositoryInfo() </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-RepositoryServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_getTypeChildren"></a><div class="element clickable method public method_getTypeChildren" data-toggle="collapse" data-target=".method_getTypeChildren .collapse">
+<h2>Get a list of object-types that are children of the specified type</h2>
+<pre>getTypeChildren(String $typeId, $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If typeId is null, then the repository MUST return all base object-types.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object The list of child object-types defined for the given typeId.</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-RepositoryServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$typeId</h4>
+<code>String</code><p>The typeId of an object-type specified in the repository</p>
+</div>
+<div class="subelement argument"><h4>$options</h4></div>
+</div></div>
+</div>
+<a id="method_getTypeDefinition"></a><div class="element clickable method public method_getTypeDefinition" data-toggle="collapse" data-target=".method_getTypeDefinition .collapse">
+<h2>Gets the definition of the specified object-type.</h2>
+<pre>getTypeDefinition(String $typeId, $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object Type Definition of the Specified Object</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-RepositoryServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$typeId</h4>
+<code>String</code><p>Object Type Id</p></div>
+<div class="subelement argument"><h4>$options</h4></div>
+</div></div>
+</div>
+<a id="method_getTypeDescendants"></a><div class="element clickable method public method_getTypeDescendants" data-toggle="collapse" data-target=".method_getTypeDescendants .collapse">
+<h2>Get a set of object-types that are descendants of the specified type</h2>
+<pre>getTypeDescendants(String $typeId, $depth, $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If typeId is null, then the repository MUST return all types and ignore the depth parameter.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object The set of descendant object-types defined for the given typeId.</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-RepositoryServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$typeId</h4>
+<code>String</code><p>The typeId of an object-type specified in the repository</p>
+</div>
+<div class="subelement argument">
+<h4>$depth</h4><p>the number of levels in the hierarchy to return (-1 == all)</p>
+</div>
+<div class="subelement argument"><h4>$options</h4></div>
+</div></div>
+</div>
+<a id="method_moveObject"></a><div class="element clickable method public method_moveObject" data-toggle="collapse" data-target=".method_moveObject .collapse">
+<h2>moveObject()
+        </h2>
+<pre>moveObject($objectId, $targetFolderId, $sourceFolderId, $options) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$objectId</h4></div>
+<div class="subelement argument"><h4>$targetFolderId</h4></div>
+<div class="subelement argument"><h4>$sourceFolderId</h4></div>
+<div class="subelement argument"><h4>$options</h4></div>
+</div></div>
+</div>
+<a id="method_query"></a><div class="element clickable method public method_query" data-toggle="collapse" data-target=".method_query .collapse">
+<h2>Execute a CMIS Query</h2>
+<pre>query(String $statement, mixed[] $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object[] List of object propery values from query</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-DiscoveryServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$statement</h4>
+<code>String</code><p>Query Statement</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>mixed[]</code><p>Options</p></div>
+</div></div>
+</div>
+<a id="method_removeObjectFromFolder"></a><div class="element clickable method public method_removeObjectFromFolder" data-toggle="collapse" data-target=".method_removeObjectFromFolder .collapse">
+<h2>removeObjectFromFolder()
+        </h2>
+<pre>removeObjectFromFolder($objectId, $targetFolderId, $options) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$objectId</h4></div>
+<div class="subelement argument"><h4>$targetFolderId</h4></div>
+<div class="subelement argument"><h4>$options</h4></div>
+</div></div>
+</div>
+<a id="method_removePolicy"></a><div class="element clickable method public method_removePolicy" data-toggle="collapse" data-target=".method_removePolicy .collapse">
+<h2>removePolicy()
+        </h2>
+<pre>removePolicy() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_setContentStream"></a><div class="element clickable method public method_setContentStream" data-toggle="collapse" data-target=".method_setContentStream .collapse">
+<h2>Set an Objects Content Stream</h2>
+<pre>setContentStream(String $objectId, String $content, String $content_type, mixed[] $options) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-ObjectServices</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.0</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$objectId</h4>
+<code>String</code><p>Object ID</p></div>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>String</code><p>Content to be appended</p></div>
+<div class="subelement argument">
+<h4>$content_type</h4>
+<code>String</code><p>Content Mime Type</p></div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>mixed[]</code><p>Options</p></div>
+</div></div>
+</div>
+<a id="method_updateProperties"></a><div class="element clickable method public method_updateProperties" data-toggle="collapse" data-target=".method_updateProperties .collapse">
+<h2>updateProperties()
+        </h2>
+<pre>updateProperties($objectId, $properties, $options) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$objectId</h4></div>
+<div class="subelement argument"><h4>$properties</h4></div>
+<div class="subelement argument"><h4>$options</h4></div>
+</div></div>
+</div>
+<a id="method_updateType"></a><div class="element clickable method public method_updateType" data-toggle="collapse" data-target=".method_updateType .collapse">
+<h2>Updates a type definition</h2>
+<pre>updateType(String $objectType) </pre>
+<div class="labels"><span class="label label-info">API</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If you add an optional property to a type in error. There is no way to remove it/correct it - without
+deleting the type.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>returns</th>
+<td>Object The updated object-type including all property definitions.</td>
+</tr>
+<tr>
+<th>api</th>
+<td>CMIS-RepositoryServices-NotImplemented</td>
+</tr>
+<tr>
+<th>since</th>
+<td>CMIS-1.1</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$objectType</h4>
+<code>String</code><p>A type definition object with the property definitions that are to change.</p></div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-07-02T22:45:01-04:00.<br></footer></div>
+</div>
+</body>
+</html>
