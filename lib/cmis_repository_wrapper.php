@@ -747,7 +747,7 @@ class CMISService extends CMISRepositoryWrapper
     // Repository Services
     function getRepositories()
     {
-        throw Exception("Not Implemented");
+        throw new Exception("Not Implemented");
     }
 
     function getRepositoryInfo()
@@ -915,7 +915,7 @@ xmlns:cmisra="http://docs.oasisopen.org/ns/cmis/restatom/200908/">
 
     function getContentChanges()
     {
-        throw Exception("Not Implemented");
+        throw new Exception("Not Implemented");
     }
 
     //Object Services
@@ -1176,12 +1176,12 @@ xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/">
 
     function createRelationship()
     { // Not in first Release
-        throw Exception("Not Implemented");
+        throw new Exception("Not Implemented");
     }
 
     function createPolicy()
     { // Not in first Release
-        throw Exception("Not Implemented");
+        throw new Exception("Not Implemented");
     }
 
     function updateProperties($objectId, $properties = array (), $options = array ())
@@ -1249,7 +1249,7 @@ xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/">
 
     function deleteTree()
     { // Nice to have
-        throw Exception("Not Implemented");
+        throw new Exception("Not Implemented");
     }
 
     function setContentStream($objectId, $content, $content_type, $options = array ())
@@ -1284,27 +1284,27 @@ xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/">
 
     function getAllVersions()
     {
-        throw Exception("Not Implemented");
+        throw new Exception("Not Implemented");
     }
 
     function checkOut()
     {
-        throw Exception("Not Implemented");
+        throw new Exception("Not Implemented");
     }
 
     function checkIn()
     {
-        throw Exception("Not Implemented");
+        throw new Exception("Not Implemented");
     }
 
     function cancelCheckOut()
     {
-        throw Exception("Not Implemented");
+        throw new Exception("Not Implemented");
     }
 
     function deleteAllVersions()
     {
-        throw Exception("Not Implemented");
+        throw new Exception("Not Implemented");
     }
 
     //Relationship Services
@@ -1312,44 +1312,44 @@ xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/">
     {
         // get stripped down version of object (for the links) and then get the relationships?
         // Low priority -- can get all information when getting object
-        throw Exception("Not Implemented");
+        throw new Exception("Not Implemented");
     }
 
     //Multi-Filing Services
     function addObjectToFolder()
     { // Probably
-        throw Exception("Not Implemented");
+        throw new Exception("Not Implemented");
     }
 
     function removeObjectFromFolder()
     { //Probably
-        throw Exception("Not Implemented");
+        throw new Exception("Not Implemented");
     }
 
     //Policy Services
     function getAppliedPolicies()
     {
-        throw Exception("Not Implemented");
+        throw new Exception("Not Implemented");
     }
 
     function applyPolicy()
     {
-        throw Exception("Not Implemented");
+        throw new Exception("Not Implemented");
     }
 
     function removePolicy()
     {
-        throw Exception("Not Implemented");
+        throw new Exception("Not Implemented");
     }
 
     //ACL Services
     function getACL()
     {
-        throw Exception("Not Implemented");
+        throw new Exception("Not Implemented");
     }
 
     function applyACL()
     {
-        throw Exception("Not Implemented");
+        throw new Exception("Not Implemented");
     }
 }

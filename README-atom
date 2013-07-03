@@ -14,6 +14,9 @@ ABOUT
 SOURCE
  The source code for this project lives at http://incubator.apache.org/chemistry/
 
+
+The atom library has been refactored and is under atom
+
 TRYING THE LIBRARY
  To Run this example execute the following
 
