@@ -49,6 +49,9 @@ DOCS
 The docs were built with the following command
 phpdoc -t docs/atom -d  atom
 
+Testing
+php ../utils/phpunit.phar <classname>
+php -e -d display_errors=On ../utils/phpunit.phar --debug -v <classname>
 ==============
 Adding Calls that mimick the domain model
 
