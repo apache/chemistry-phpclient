@@ -486,26 +486,32 @@ class CMISRepositoryWrapper
         $retval = new stdClass();
         $retval->links = CMISRepositoryWrapper :: getLinksArray($xmlnode);
         $retval->properties = array ();
+        $renditions = $xmlnode->getElementsByTagName("object")->item(0)->getElementsByTagName("rendition");
+		// Add renditions to CMIS object
+		$renditionArray = array();
+		if($renditions->length > 0){
+		  $i = 0;
+		  foreach ($renditions as $rendition) {
+		    $rend_nodes = $rendition->childNodes;
+            foreach ($rend_nodes as $rend){
+              if ($rend->localName != NULL){
+	            $renditionArray[$i][$rend->localName] = $rend->nodeValue;
+              }
+            }
+            $i++;        
+	      }
+		}
+		$retval->renditions = $renditionArray;
+        
         $prop_nodes = $xmlnode->getElementsByTagName("object")->item(0)->getElementsByTagName("properties")->item(0)->childNodes;
         foreach ($prop_nodes as $pn)
         {
-            if ($pn->attributes)
-            {
-                $propDefId = $pn->attributes->getNamedItem("propertyDefinitionId");
-                // TODO: Maybe use ->length=0 to even detect null values
-                if (!is_null($propDefId) && $pn->getElementsByTagName("value") && $pn->getElementsByTagName("value")->item(0))
-                {
-                	if ($pn->getElementsByTagName("value")->length > 1) {
-                		$retval->properties[$propDefId->nodeValue] = array();
-                		for ($idx=0;$idx < $pn->getElementsByTagName("value")->length;$idx++) {
-                			$retval->properties[$propDefId->nodeValue][$idx] = $pn->getElementsByTagName("value")->item($idx)->nodeValue;
-                		}
-                	} else {
-                		$retval->properties[$propDefId->nodeValue] = $pn->getElementsByTagName("value")->item(0)->nodeValue;
-                	}
-                }
-            }
+        	if ($pn->attributes) {
+				//supressing errors since PHP sometimes sees DOM elements as "non-objects"
+				@$retval->properties[$pn->attributes->getNamedItem("propertyDefinitionId")->nodeValue] = $pn->getElementsByTagName("value")->item(0)->nodeValue;
+			}
         }
+        
         $retval->uuid = $xmlnode->getElementsByTagName("id")->item(0)->nodeValue;
         $retval->id = $retval->properties["cmis:objectId"];
         //TODO: RRM FIX THIS
@@ -527,14 +533,6 @@ class CMISRepositoryWrapper
         return $retval;
     }
     
-	/**
-	 * @internal
-	 */
-    function handleSpaces($path)
-    {
-        return $this->do_not_urlencode ? $path : rawurlencode($path);
-    }
-
 	/**
 	 * @internal
 	 */
