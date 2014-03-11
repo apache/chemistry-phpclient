@@ -690,7 +690,7 @@ xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/">
 					$hash_values['properties'] .= $val;
 				}
 			} else {
-				$hash_values['properties'] = $propValue;
+				$hash_values['properties'] = htmlentities($propValue);
 			}
 			//echo "HASH:\n";
 			//print_r(array("template" =>$propTemplate, "Hash" => $hash_values));
