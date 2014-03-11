@@ -1055,10 +1055,10 @@ xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/">
 		$hash_values = array_merge($fixed_hash_values, $hash_values);
 		
 		if (!isset($hash_values['title'])) {
-			$hash_values['title'] = $objectName;
+			$hash_values['title'] = preg_replace("/[^A-Za-z0-9\s.&; ]/", '', htmlentities($objectName));
 		}
 		if (!isset($hash_values['summary'])) {
-			$hash_values['summary'] = $objectName;
+			$hash_values['summary'] = preg_replace("/[^A-Za-z0-9\s.&; ]/", '', htmlentities($objectName));
 		}
 		$put_value = CMISRepositoryWrapper :: processTemplate($entry_template, $hash_values);
 		$ret = $this->doPut($obj_url, $put_value, MIME_ATOM_XML_ENTRY);
