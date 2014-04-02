@@ -999,8 +999,16 @@ xmlns:cmisra="http://docs.oasis-open.org/ns/cmis/restatom/200908/">
 		return $this->postObject($folderId, $fileName, "cmis:document", $properties, $content, $content_type, $options);
 	}
 
-	function createDocumentFromSource() { //Yes?
-		throw new CmisNotSupportedException("createDocumentFromSource is not supported by the AtomPub binding!");
+	function createDocumentFromSource($folderId, $fileName, $fileNameFrom, $properties = array(), $options = array()) { //Yes?
+        //Get content_type 
+        $finfo = finfo_open(FILEINFO_MIME);
+        $content_type = finfo_file($finfo, $fileNameFrom);
+        finfo_close($finfo);
+        
+        //Get content
+        $content = file_get_contents($fileNameFrom);
+        
+        return $this->createDocument($folderId, $fileName, $properties, $content, $content_type, $options);
 	}
 
 	function createFolder($folderId, $folderName, $properties = array (), $options = array ()) { // Yes
