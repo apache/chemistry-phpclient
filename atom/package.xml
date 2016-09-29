@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <package version="1.0">
-	<name>cmis-phplib</name>
+	<name>cmis</name>
 	<summary>PHP Atom Pub CMIS client</summary>
 	<description>
 		This is a PHP CMIS client library that uses the Atom Pub Binding
@@ -16,17 +16,18 @@
 	</maintainers>
 
 	<release>
-		<version>0.2.0</version>
-		<date>2013-11-20</date>
-		<state>stable</state>
+		<version>0.2.0ignos</version>
+		<date>2016-09-29</date>
+		<license>Apache License</license>
+		<state>beta</state>
 		<notes>
-			This is the first published release.
+			This release fixes a regression bug that avoids you to access multivalued properties.
 		</notes>
 		<filelist>
 			<dir name="/" baseinstalldir="cmis-lib">
 				<file role="php" name="cmis-lib.php" />
 			</dir>
-			<dir name="/cmis" baseinstalldir="cmis-lib/cmis">
+			<dir name="/cmis" baseinstalldir="cmis-lib">
 				<file role="php" name="cmis_repository_wrapper.php" />
 				<file role="php" name="cmis_service.php" />
 			</dir>

@@ -506,10 +506,22 @@ class CMISRepositoryWrapper
         $prop_nodes = $xmlnode->getElementsByTagName("object")->item(0)->getElementsByTagName("properties")->item(0)->childNodes;
         foreach ($prop_nodes as $pn)
         {
-        	if ($pn->attributes) {
-				//supressing errors since PHP sometimes sees DOM elements as "non-objects"
-				@$retval->properties[$pn->attributes->getNamedItem("propertyDefinitionId")->nodeValue] = $pn->getElementsByTagName("value")->item(0)->nodeValue;
-			}
+            if ($pn->attributes)
+            {
+                $propDefId = $pn->attributes->getNamedItem("propertyDefinitionId");
+                // TODO: Maybe use ->length=0 to even detect null values
+                if (!is_null($propDefId) && $pn->getElementsByTagName("value") && $pn->getElementsByTagName("value")->item(0))
+                {
+                	if ($pn->getElementsByTagName("value")->length > 1) {
+                		$retval->properties[$propDefId->nodeValue] = array();
+                		for ($idx=0;$idx < $pn->getElementsByTagName("value")->length;$idx++) {
+                			$retval->properties[$propDefId->nodeValue][$idx] = $pn->getElementsByTagName("value")->item($idx)->nodeValue;
+                		}
+                	} else {
+                		$retval->properties[$propDefId->nodeValue] = $pn->getElementsByTagName("value")->item(0)->nodeValue;
+                	}
+                }
+            }
         }
         
         $retval->uuid = $xmlnode->getElementsByTagName("id")->item(0)->nodeValue;
